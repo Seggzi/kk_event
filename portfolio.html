@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Portfolio of KK Events – Beautiful past events, weddings, corporate functions, galas, cultural celebrations and more in Kwara State, Nigeria." />
+    <title>Portfolio | KK Events – Kwara State</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#065f46',
+                        'brand-gold': '#d4af37',
+                        'brand-gold-dark': '#b8860b',
+                        'brand-gold-light': '#e5c068',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.025em;
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 4rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        figcaption {
+            text-align: center;
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-brand-green/20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="text-3xl font-bold text-brand-green tracking-tight">
+                    KK Events
+                </a>
+
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="index.html"
+                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">Home</a>
+                    <a href="about.html"
+                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">About</a>
+                    <a href="services.html"
+                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">Services</a>
+                    <a href="portfolio.html"
+                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">Portfolio</a>
+                    <a href="contact.html"
+                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">Contact</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-brand-green focus:outline-none">
+                    <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Full-screen Mobile Menu -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-black/80 backdrop-blur-lg z-50 flex items-center justify-end transition-opacity duration-500 opacity-0 pointer-events-none md:hidden">
+            <div id="mobile-panel"
+                class="relative h-full w-4/5 max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-700 ease-out flex flex-col">
+                <div
+                    class="flex items-center justify-between p-8 border-b border-brand-gold/20 bg-white/95 backdrop-blur-sm">
+                    <h3 class="text-3xl font-bold text-brand-green">KK Events</h3>
+                    <button id="mobile-close-btn"
+                        class="text-gray-700 hover:text-brand-gold focus:outline-none transition">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div
+                    class="flex-1 flex flex-col justify-center items-center space-y-12 px-8 text-2xl md:text-3xl font-medium bg-white/95">
+                    <a href="index.html"
+                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">Home</a>
+                    <a href="about.html"
+                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">About</a>
+                    <a href="services.html"
+                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">Services</a>
+                    <a href="portfolio.html"
+                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">Portfolio</a>
+                    <a href="contact.html"
+                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">Contact</a>
+                </div>
+
+                <div
+                    class="p-8 text-center text-gray-600 text-sm border-t border-brand-gold/10 bg-white/95 backdrop-blur-sm">
+                    <p>Kwara State, Nigeria</p>
+                    <p class="mt-2">
+                        <a href="tel:+2348102005493" class="hover:text-brand-gold">+234 810 200 5493</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section
+        class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-brand-green via-emerald-900 to-emerald-950 text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8 text-brand-gold text-balance"
+                data-aos="fade-up">
+                Our Portfolio
+            </h1>
+            <p class="text-xl sm:text-2xl md:text-3xl max-w-4xl mx-auto font-light leading-relaxed" data-aos="fade-up"
+                data-aos-delay="200">
+                Moments we've brought to life – vibrant, cultural, unforgettable.
+            </p>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="py-12 bg-white border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <button data-filter="all"
+                    class="px-6 py-3 bg-brand-green text-white rounded-full font-medium hover:bg-emerald-800 transition active:scale-95">All
+                    Events</button>
+                <button data-filter="celebration"
+                    class="px-6 py-3 bg-white border-2 border-brand-gold text-brand-green rounded-full font-medium hover:bg-brand-gold hover:text-white transition active:scale-95">Celebrations</button>
+                <button data-filter="cultural"
+                    class="px-6 py-3 bg-white border-2 border-brand-gold text-brand-green rounded-full font-medium hover:bg-brand-gold hover:text-white transition active:scale-95">Cultural</button>
+                <button data-filter="fiesta"
+                    class="px-6 py-3 bg-white border-2 border-brand-gold text-brand-green rounded-full font-medium hover:bg-brand-gold hover:text-white transition active:scale-95">Fiesta
+                    / Games</button>
+                <button data-filter="vendor"
+                    class="px-6 py-3 bg-white border-2 border-brand-gold text-brand-green rounded-full font-medium hover:bg-brand-gold hover:text-white transition active:scale-95">Vendor
+                    / Promotion</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery with Captions -->
+    <section class="py-20 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-8" id="portfolio-grid">
+
+                <!-- 1 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="cultural">
+                    <img src="images/portfolio/cultural-procession-1.jpg"
+                        data-full="images/portfolio/cultural-procession-1.jpg"
+                        alt="Traditional procession with royal fan and colorful attire"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Traditional royal procession – elegance and culture in motion</figcaption>
+                </figure>
+
+                <!-- 2 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="vendor">
+                    <img src="images/portfolio/market-stalls-walking.jpg"
+                        data-full="images/portfolio/market-stalls-walking.jpg"
+                        alt="Outdoor vendor activation with branded tents and visitors"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Vibrant outdoor market activation – engaging visitors & brands</figcaption>
+                </figure>
+
+                <!-- 3 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="vendor">
+                    <img src="images/portfolio/kafowo-oil-booth.jpg" data-full="images/portfolio/kafowo-oil-booth.jpg"
+                        alt="Kafowo Oil branded stall with product display"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Kafowo Oil booth – strategic product showcase & branding</figcaption>
+                </figure>
+
+                <!-- 4 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="vendor">
+                    <img src="images/portfolio/kafowo-oil-display.jpg"
+                        data-full="images/portfolio/kafowo-oil-display.jpg"
+                        alt="Detailed view of Kafowo Oil products and branding"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Close-up product display – premium oil & snack branding</figcaption>
+                </figure>
+
+                <!-- 5 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="promotion">
+                    <img src="images/portfolio/ilorin-game-fiesta-2026.jpg"
+                        data-full="images/portfolio/ilorin-game-fiesta-2026.jpg"
+                        alt="New Year 2026 sponsor gratitude post – Ilorin Game Fiesta"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>2026 New Year sponsor appreciation – Ilorin Game Fiesta</figcaption>
+                </figure>
+
+                <!-- 6 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="community">
+                    <img src="images/portfolio/live-hosting-laugh.jpg"
+                        data-full="images/portfolio/live-hosting-laugh.jpg"
+                        alt="Energetic live hosting and audience reaction"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Live hosting energy – crowd reactions & excitement</figcaption>
+                </figure>
+
+                <!-- 7 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="vendor">
+                    <img src="images/portfolio/ijebu-palm-stall.jpg" data-full="images/portfolio/ijebu-palm-stall.jpg"
+                        alt="Local product stall with palm oil, Ijebu garri and more"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Local delicacies stall – palm oil, garri & snacks</figcaption>
+                </figure>
+
+                <!-- 8 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="fiesta">
+                    <img src="images/portfolio/board-game-hands.jpg" data-full="images/portfolio/board-game-hands.jpg"
+                        alt="Community gaming session at Ilorin Fiesta"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Hands-on gaming fun – Ilorin Game Fiesta moments</figcaption>
+                </figure>
+
+                <!-- 9 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="promotion">
+                    <img src="images/portfolio/sponsor-wall-logos.jpg"
+                        data-full="images/portfolio/sponsor-wall-logos.jpg"
+                        alt="Impressive sponsor backdrop with partner brands"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Sponsor wall of honor – proud partner showcase</figcaption>
+                </figure>
+
+                <!-- 10 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="celebration">
+                    <img src="images/portfolio/purple-dance-group.jpg"
+                        data-full="images/portfolio/purple-dance-group.jpg" alt="Vibrant group dance performance"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Energetic cultural dance – celebration in full swing</figcaption>
+                </figure>
+
+                <!-- 11 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="fiesta">
+                    <img src="images/portfolio/welcome-horse-entrance.jpg"
+                        data-full="images/portfolio/welcome-horse-entrance.jpg"
+                        alt="Dramatic horse entrance at Ilorin Game Fiesta"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Grand welcome entrance – Ilorin Game Fiesta highlight</figcaption>
+                </figure>
+
+                <!-- 12 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="vendor">
+                    <img src="images/portfolio/booth-interaction.jpg" data-full="images/portfolio/booth-interaction.jpg"
+                        alt="Engaged visitors at branded booth"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Active booth engagement – visitor interaction</figcaption>
+                </figure>
+
+                <!-- 13 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="cultural">
+                    <img src="images/portfolio/throne-portrait.jpg" data-full="images/portfolio/throne-portrait.jpg"
+                        alt="Regal traditional portrait with beaded drum"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Regal throne portrait – traditional elegance</figcaption>
+                </figure>
+
+                <!-- 14 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="promotion">
+                    <img src="images/portfolio/ig-live-promo.jpg" data-full="images/portfolio/ig-live-promo.jpg"
+                        alt="Instagram Live session promotion with guests"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Instagram Live promo – collaboration & guest feature</figcaption>
+                </figure>
+
+                <!-- 15 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="celebration">
+                    <img src="images/portfolio/corridor-group-walk.jpg"
+                        data-full="images/portfolio/corridor-group-walk.jpg"
+                        alt="Joyful group entrance at indoor celebration"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Joyful group entrance – indoor celebration moment</figcaption>
+                </figure>
+
+                <!-- 16 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="fiesta">
+                    <img src="images/portfolio/scrabble-game.jpg" data-full="images/portfolio/scrabble-game.jpg"
+                        alt="Competitive board game session"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Competitive Scrabble action – game fiesta energy</figcaption>
+                </figure>
+
+                <!-- 17 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="vendor">
+                    <img src="images/portfolio/palm-product-stall.jpg"
+                        data-full="images/portfolio/palm-product-stall.jpg" alt="Palm oil and local snacks display"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Local snacks & palm oil stall – authentic display</figcaption>
+                </figure>
+
+                <!-- 18 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="cultural">
+                    <img src="images/portfolio/elder-money-blessing.jpg"
+                        data-full="images/portfolio/elder-money-blessing.jpg" alt="Traditional blessing ceremony"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Traditional blessing & giving – cultural moment</figcaption>
+                </figure>
+
+                <!-- 19 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="fiesta">
+                    <img src="images/portfolio/game-booth-group.jpg" data-full="images/portfolio/game-booth-group.jpg"
+                        alt="Visitors enjoying games at the fiesta"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Happy visitors at game booth – fiesta joy</figcaption>
+                </figure>
+
+                <!-- 20 -->
+                <figure class="break-inside-avoid portfolio-item" data-category="cultural">
+                    <img src="images/portfolio/white-attire-fan.jpg" data-full="images/portfolio/white-attire-fan.jpg"
+                        alt="Elegant traditional attire during procession"
+                        class="w-full rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" loading="lazy">
+                    <figcaption>Elegant traditional attire – graceful procession</figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-brand-green/5 border-t border-brand-gold/20">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 text-brand-green">
+                Want Your Event Featured Here?
+            </h2>
+            <p class="text-xl md:text-2xl mb-10 text-gray-700">
+                Let's create something extraordinary together.
+            </p>
+            <a href="contact.html"
+                class="inline-block bg-brand-gold text-brand-green px-12 py-6 rounded-full text-xl font-semibold hover:bg-brand-gold-dark transition shadow-xl transform hover:scale-105">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox">
+        <span id="lightbox-close">×</span>
+        <img id="lightbox-img" src="" alt="Enlarged portfolio image">
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        AOS.init({ duration: 900, once: true, mirror: false });
+    </script>
+    <script src="js/main.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+</body>
+
+</html>
