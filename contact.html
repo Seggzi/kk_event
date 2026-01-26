@@ -58,7 +58,7 @@
 
 <body class="bg-gray-50 text-gray-900 antialiased">
 
-    <!-- Navbar (same as other pages) -->
+ <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-brand-green/20 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -79,6 +79,7 @@
                         class="text-lg font-medium text-gray-700 hover:text-brand-green transition">Contact</a>
                 </div>
 
+                <!-- Hamburger Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-brand-green focus:outline-none">
                     <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -89,11 +90,14 @@
             </div>
         </div>
 
-        <!-- Full-screen Mobile Menu (same as before) -->
+        <!-- Full-screen Mobile Menu Overlay -->
         <div id="mobile-menu"
             class="fixed inset-0 bg-black/80 backdrop-blur-lg z-50 flex items-center justify-end transition-opacity duration-500 opacity-0 pointer-events-none md:hidden">
+            <!-- Menu Panel – Clearly ON TOP of overlay -->
             <div id="mobile-panel"
-                class="relative h-full w-4/5 max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-700 ease-out flex flex-col">
+                class="relative h-full w-4/5 max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-700 ease-out flex flex-col z-60">
+
+                <!-- Header -->
                 <div
                     class="flex items-center justify-between p-8 border-b border-brand-gold/20 bg-white/95 backdrop-blur-sm">
                     <h3 class="text-3xl font-bold text-brand-green">KK Events</h3>
@@ -107,6 +111,7 @@
                     </button>
                 </div>
 
+                <!-- Menu Links – Centered vertically -->
                 <div
                     class="flex-1 flex flex-col justify-center items-center space-y-12 px-8 text-2xl md:text-3xl font-medium bg-white/95">
                     <a href="index.html"
@@ -121,6 +126,7 @@
                         class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">Contact</a>
                 </div>
 
+                <!-- Bottom Contact Info -->
                 <div
                     class="p-8 text-center text-gray-600 text-sm border-t border-brand-gold/10 bg-white/95 backdrop-blur-sm">
                     <p>Kwara State, Nigeria</p>
@@ -131,7 +137,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Hero -->
     <section
         class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-brand-green via-emerald-900 to-emerald-950 text-white">
@@ -312,7 +317,8 @@
         </div>
     </section>
 
-    <!-- Footer (with FB + TikTok as added previously) -->
+    
+     <!-- Footer (with FB + TikTok as added previously) -->
     <footer class="bg-brand-green text-emerald-100 py-16 sm:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
             <div>
@@ -409,7 +415,7 @@
         </div>
     </footer>
 
-    
+
     <script>
 
     AOS.init({ duration: 900, once: true, mirror: false });
