@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of KK Events – Beautiful past events, weddings, corporate functions, galas, cultural celebrations and more in Kwara State, Nigeria." />
-  <title>Portfolio | KK Events – Kwara State</title>
-  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+ <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<!-- ══ PRIMARY SEO ══ -->
+<title>Portfolio | KK Events – Past Events, Weddings & Cultural Celebrations</title>
+<meta name="description" content="Browse KK Events' portfolio of stunning past events — weddings, corporate functions, cultural celebrations, the Ilorin Game Fiesta, vendor activations and more in Kwara State.">
+<meta name="keywords" content="KK Events portfolio, Ilorin events gallery, Kwara State event photos, wedding events Nigeria, Ilorin Game Fiesta, cultural events Kwara, corporate event photos Nigeria">
+<meta name="author" content="Kahbikushii – KK Events">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kk-event-planning.vercel.app/portfolio.html">
+
+<!-- ══ OPEN GRAPH ══ -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KK Events">
+<meta property="og:title" content="Portfolio | KK Events – Past Events, Weddings & Cultural Celebrations">
+<meta property="og:description" content="Browse KK Events' portfolio of stunning past events — weddings, corporate functions, cultural celebrations, the Ilorin Game Fiesta, vendor activations and more in Kwara State.">
+<meta property="og:url" content="https://kk-event-planning.vercel.app/portfolio.html">
+<meta property="og:image" content="https://kk-event-planning.vercel.app/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KK Events Portfolio – Stunning Events in Kwara State Nigeria">
+<meta property="og:locale" content="en_NG">
+
+<!-- ══ TWITTER CARD ══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portfolio | KK Events – Past Events, Weddings & Cultural Celebrations">
+<meta name="twitter:description" content="Browse KK Events' portfolio of stunning past events — weddings, corporate functions, cultural celebrations, the Ilorin Game Fiesta and more in Kwara State.">
+<meta name="twitter:image" content="https://kk-event-planning.vercel.app/images/og-cover.jpg">
+<meta name="twitter:site" content="@iam_kahbikushii">
+<meta name="twitter:creator" content="@iam_kahbikushii">
+
+<!-- ══ BROWSER / PWA ══ -->
+<meta name="theme-color" content="#0a3d2e">
+<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+
+<!-- ══ JSON-LD STRUCTURED DATA ══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "KK Events Portfolio",
+  "description": "Gallery of past events delivered by KK Events across Kwara State, Nigeria.",
+  "url": "https://kk-event-planning.vercel.app/portfolio.html",
+  "author": {
+    "@type": "Organization",
+    "name": "KK Events",
+    "url": "https://kk-event-planning.vercel.app"
+  }
+}
+</script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,58 +75,34 @@
       line-height: 1.7;
     }
 
-    /* Grain overlay */
+    /* Grain */
     body::before {
-      content: '';
-      position: fixed; inset: 0;
+      content: ''; position: fixed; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
       pointer-events: none; z-index: 9999; opacity: 0.4;
     }
 
     /* ── NAVBAR ── */
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(10,61,46,0.97); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201,168,76,0.12);
-      box-shadow: 0 2px 40px rgba(0,0,0,0.2);
-    }
-    .nav-inner {
-      max-width: 1280px; margin: 0 auto; padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 76px;
-    }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,61,46,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.12); box-shadow: 0 2px 40px rgba(0,0,0,0.2); }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 76px; }
     .nav-logo { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold-light); letter-spacing: 0.08em; text-decoration: none; }
     .nav-links { display: flex; gap: 2.5rem; align-items: center; }
-    .nav-links a {
-      font-family: 'Cinzel', serif; font-size: 0.7rem;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,255,255,0.65); text-decoration: none;
-      position: relative; padding-bottom: 4px; transition: color 0.3s;
-    }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 100%;
-      height: 1px; background: var(--gold); transition: right 0.35s ease;
-    }
+    .nav-links a { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; position: relative; padding-bottom: 4px; transition: color 0.3s; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; right: 100%; height: 1px; background: var(--gold); transition: right 0.35s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
     .nav-links a:hover::after, .nav-links a.active::after { right: 0; }
     .nav-cta { background: var(--gold) !important; color: var(--green) !important; padding: 9px 22px !important; font-size: 0.68rem !important; }
     .nav-cta::after { display: none !important; }
     .nav-cta:hover { background: var(--gold-light) !important; }
-
     .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--gold-light); margin: 6px 0; transition: 0.3s; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--gold-light); margin: 6px 0; }
     @media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: block; } }
 
     /* ── MOBILE DRAWER ── */
-    .mobile-drawer { position: fixed; inset: 0; z-index: 200; display: flex; justify-content: flex-end; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+    .mobile-drawer { position: fixed; inset: 0; z-index: 200; display: flex; justify-content: flex-end; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
     .mobile-drawer.open { opacity: 1; pointer-events: all; }
     .drawer-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
-    .drawer-panel {
-      position: relative; width: 300px; height: 100%;
-      background: var(--green); border-left: 1px solid rgba(201,168,76,0.2);
-      transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
-      display: flex; flex-direction: column;
-    }
+    .drawer-panel { position: relative; width: 300px; height: 100%; background: var(--green); border-left: 1px solid rgba(201,168,76,0.2); transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); display: flex; flex-direction: column; }
     .mobile-drawer.open .drawer-panel { transform: translateX(0); }
     .drawer-head { padding: 2rem; border-bottom: 1px solid rgba(201,168,76,0.15); display: flex; justify-content: space-between; align-items: center; }
     .drawer-close { background: none; border: none; cursor: pointer; color: var(--gold-light); font-size: 1.8rem; line-height: 1; }
@@ -94,416 +113,187 @@
 
     /* ── PAGE HERO ── */
     .page-hero {
-      padding: 160px 2.5rem 120px;
+      padding: 160px 2.5rem 100px;
       background: linear-gradient(150deg, #071f18 0%, #0a3d2e 50%, #0d4f3c 100%);
       position: relative; overflow: hidden;
     }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);
-      background-size: 80px 80px;
-    }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px); background-size: 80px 80px; }
     .hero-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); pointer-events: none; }
-    .hero-ring-1 { width: 700px; height: 700px; top: -25%; right: -8%; }
-    .hero-ring-2 { width: 440px; height: 440px; top: -8%; right: 10%; }
+    .hero-ring-1 { width: 700px; height: 700px; top: -25%; right: -5%; }
+    .hero-ring-2 { width: 420px; height: 420px; top: -5%; right: 12%; }
 
-    .page-hero-inner {
-      max-width: 1280px; margin: 0 auto; position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: flex-end;
-    }
-    @media (max-width: 860px) { .page-hero-inner { grid-template-columns: 1fr; gap: 2rem; } }
-
-    .page-hero-eyebrow {
-      font-family: 'Cinzel', serif; font-size: 0.67rem;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); display: flex; align-items: center; gap: 1rem;
-      margin-bottom: 1.5rem;
-      opacity: 0; animation: slide-up 0.8s ease 0.2s forwards;
-    }
+    .page-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; opacity: 0; animation: slide-up 0.8s ease 0.2s forwards; }
     .page-hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); display: inline-block; }
-    .page-hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.5rem, 7vw, 7.5rem); font-weight: 300;
-      color: #fff; line-height: 1.0;
-      opacity: 0; animation: slide-up 1s ease 0.35s forwards;
-    }
+    .page-hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 7vw, 7.5rem); font-weight: 300; color: #fff; line-height: 1.0; opacity: 0; animation: slide-up 1s ease 0.35s forwards; }
     .page-hero-title em { font-style: italic; color: var(--gold-light); }
-    .page-hero-sub {
-      font-size: 1rem; font-weight: 300;
-      color: rgba(255,255,255,0.5); max-width: 480px; line-height: 1.85;
-      margin-top: 1.5rem;
-      opacity: 0; animation: slide-up 1s ease 0.5s forwards;
-    }
-
-    /* Hero stat strip on right */
-    .hero-meta {
-      text-align: right;
-      opacity: 0; animation: slide-up 1s ease 0.7s forwards;
-    }
-    .hero-meta-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem; font-weight: 300; color: var(--gold-light);
-      line-height: 1; display: block;
-    }
-    .hero-meta-label {
-      font-family: 'Cinzel', serif; font-size: 0.62rem;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-    }
-    .hero-meta-divider { width: 100%; height: 1px; background: rgba(201,168,76,0.2); margin: 1.5rem 0; }
+    .page-hero-sub { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.5); max-width: 500px; line-height: 1.85; margin-top: 1.5rem; opacity: 0; animation: slide-up 1s ease 0.5s forwards; }
+    .gold-rule { height: 1px; background: linear-gradient(to right, var(--gold), transparent); width: 100px; margin-top: 2.5rem; opacity: 0; animation: fade-in 1s ease 0.8s forwards; }
 
     @keyframes slide-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* ── SHARED ── */
-    .section-label {
-      font-family: 'Cinzel', serif; font-size: 0.67rem;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;
-    }
-    .section-label::before { content: ''; width: 28px; height: 1px; background: var(--gold); display: inline-block; }
-
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-family: 'Cinzel', serif; font-size: 0.7rem;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      background: var(--gold); color: var(--green);
-      padding: 15px 34px; text-decoration: none;
-      transition: all 0.35s ease; position: relative; overflow: hidden;
-    }
-    .btn-primary::before { content: ''; position: absolute; top: 0; left: -100%; right: 100%; bottom: 0; background: var(--gold-light); transition: left 0.35s, right 0.35s; }
-    .btn-primary:hover::before { left: 0; right: 0; }
-    .btn-primary span { position: relative; }
-    .btn-outline-light {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-family: 'Cinzel', serif; font-size: 0.7rem;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      border: 1px solid rgba(201,168,76,0.4); color: var(--gold-light);
-      padding: 15px 34px; text-decoration: none; transition: all 0.35s ease;
-    }
-    .btn-outline-light:hover { background: rgba(201,168,76,0.08); border-color: var(--gold); }
-
-    /* ── SCROLL REVEAL ── */
-    [data-reveal] { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    [data-reveal].visible { opacity: 1; transform: none; }
-    [data-reveal-delay="100"] { transition-delay: 0.1s; }
-    [data-reveal-delay="200"] { transition-delay: 0.2s; }
-    [data-reveal-delay="300"] { transition-delay: 0.3s; }
+    @keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
 
     /* ── FILTER BAR ── */
-    .filter-section {
+    .filter-bar {
       background: var(--green);
       border-bottom: 1px solid rgba(201,168,76,0.12);
-      position: sticky; top: 76px; z-index: 90;
+      position: sticky; top: 76px; z-index: 50;
     }
-    .filter-inner {
+    .filter-bar-inner {
       max-width: 1280px; margin: 0 auto; padding: 0 2rem;
-      display: flex; align-items: center; gap: 0;
-      overflow-x: auto; scrollbar-width: none;
+      display: flex; align-items: center; gap: 0; overflow-x: auto;
+      scrollbar-width: none;
     }
-    .filter-inner::-webkit-scrollbar { display: none; }
-
+    .filter-bar-inner::-webkit-scrollbar { display: none; }
     .filter-btn {
-      font-family: 'Cinzel', serif; font-size: 0.63rem;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      background: none; border: none; cursor: pointer;
-      padding: 1.3rem 1.6rem;
-      position: relative; white-space: nowrap;
-      transition: color 0.3s;
+      font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); background: none; border: none; cursor: pointer;
+      padding: 1.1rem 1.6rem; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
     }
-    .filter-btn::after {
-      content: ''; position: absolute; bottom: 0; left: 1.6rem; right: 1.6rem;
-      height: 2px; background: var(--gold);
-      transform: scaleX(0); transition: transform 0.3s ease;
-    }
-    .filter-btn:hover { color: rgba(255,255,255,0.75); }
-    .filter-btn.active { color: var(--gold-light); }
-    .filter-btn.active::after { transform: scaleX(1); }
-
-    .filter-count {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.7rem; color: var(--gold);
-      margin-left: 0.3rem; opacity: 0.7;
-    }
+    .filter-btn:hover { color: var(--gold-light); }
+    .filter-btn.active { color: var(--gold-light); border-bottom-color: var(--gold); }
 
     /* ── GALLERY SECTION ── */
     .gallery-section {
-      background: var(--cream); padding: 5rem 2.5rem 8rem;
+      background: var(--cream);
+      padding: 5rem 2.5rem 7rem;
     }
     .gallery-inner { max-width: 1280px; margin: 0 auto; }
 
-    /* Masonry via CSS columns */
-    .masonry-grid {
-      columns: 4 260px;
-      column-gap: 1.5rem;
-      transition: opacity 0.4s ease;
+    /* Masonry grid */
+    .gallery-grid {
+      columns: 4 280px;
+      column-gap: 1rem;
+      gap: 1rem;
     }
+    @media (max-width: 900px) { .gallery-grid { columns: 3 200px; } }
+    @media (max-width: 600px) { .gallery-grid { columns: 2 160px; } }
 
     .gallery-item {
       break-inside: avoid;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       position: relative;
       overflow: hidden;
       cursor: pointer;
       display: block;
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .gallery-item.hidden {
-      display: none;
     }
 
-    /* Image wrapper with reveal overlay */
-    .gallery-img-wrap {
-      position: relative; overflow: hidden;
-    }
-    .gallery-img-wrap img {
-      width: 100%; display: block;
-      filter: brightness(0.88) contrast(1.05);
-      transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), filter 0.5s ease;
-    }
-    .gallery-item:hover .gallery-img-wrap img {
-      transform: scale(1.06);
-      filter: brightness(0.95) contrast(1.08);
+    .gallery-item img {
+      width: 100%; height: auto; display: block;
+      transition: transform 0.7s ease, filter 0.4s ease;
+      filter: brightness(0.92) contrast(1.03);
     }
 
     /* Overlay on hover */
     .gallery-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,61,46,0.85) 0%, rgba(10,61,46,0.2) 50%, transparent 100%);
+      background: linear-gradient(to top, rgba(10,61,46,0.9) 0%, rgba(10,61,46,0.2) 50%, transparent 100%);
       opacity: 0; transition: opacity 0.4s ease;
       display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 1.5rem;
+      padding: 1.2rem;
     }
     .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-item:hover img { transform: scale(1.06); filter: brightness(0.85) contrast(1.05); }
 
-    .overlay-label {
-      font-family: 'Cinzel', serif; font-size: 0.58rem;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 0.4rem;
-      transform: translateY(8px); transition: transform 0.4s ease 0.05s;
-    }
-    .overlay-caption {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem; font-weight: 400; color: #fff;
-      line-height: 1.3;
-      transform: translateY(8px); transition: transform 0.4s ease 0.1s;
-    }
-    .overlay-icon {
-      position: absolute; top: 1rem; right: 1rem;
-      width: 36px; height: 36px;
-      border: 1px solid rgba(201,168,76,0.6);
-      display: flex; align-items: center; justify-content: center;
-      transform: scale(0.8) rotate(-10deg); transition: transform 0.4s ease;
-    }
-    .overlay-icon svg { width: 16px; height: 16px; color: var(--gold); }
-    .gallery-item:hover .overlay-label,
-    .gallery-item:hover .overlay-caption { transform: translateY(0); }
-    .gallery-item:hover .overlay-icon { transform: scale(1) rotate(0deg); }
+    .gallery-caption { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 400; color: #fff; line-height: 1.3; transform: translateY(8px); transition: transform 0.4s; }
+    .gallery-item:hover .gallery-caption { transform: translateY(0); }
+    .gallery-tag { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
 
-    /* Gold accent bar bottom */
-    .gallery-item::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 100%;
-      height: 2px; background: var(--gold);
-      transition: right 0.4s ease;
-    }
-    .gallery-item:hover::after { right: 0; }
+    /* Hidden items for filter */
+    .gallery-item.hidden { display: none; }
 
-    /* figcaption below image */
-    .gallery-caption {
-      padding: 0.75rem 0 0;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem; color: rgba(10,61,46,0.55);
-      line-height: 1.4;
-    }
+    /* Empty state */
+    .gallery-empty { display: none; text-align: center; padding: 5rem 2rem; color: rgba(10,61,46,0.4); font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; }
+    .gallery-empty.visible { display: block; }
 
-    /* ── EMPTY STATE ── */
-    .empty-state {
-      text-align: center; padding: 5rem 2rem;
-      display: none;
+    /* Count badge */
+    .gallery-count {
+      font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(10,61,46,0.35); text-align: right; margin-bottom: 2rem;
     }
-    .empty-state.visible { display: block; }
-    .empty-state-icon { font-size: 3rem; color: rgba(201,168,76,0.3); margin-bottom: 1rem; }
-    .empty-state p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: rgba(10,61,46,0.4); }
+    .gallery-count span { color: var(--gold); }
 
     /* ── LIGHTBOX ── */
     .lightbox {
-      position: fixed; inset: 0; z-index: 300;
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(4,16,12,0.95);
       display: flex; align-items: center; justify-content: center;
       opacity: 0; pointer-events: none;
       transition: opacity 0.4s ease;
+      backdrop-filter: blur(8px);
     }
     .lightbox.open { opacity: 1; pointer-events: all; }
 
-    .lb-backdrop {
-      position: absolute; inset: 0;
-      background: rgba(7, 31, 24, 0.96);
-      backdrop-filter: blur(8px);
+    .lightbox-img-wrap {
+      position: relative; max-width: 88vw; max-height: 85vh;
+    }
+    .lightbox-img-wrap img {
+      max-width: 88vw; max-height: 85vh;
+      object-fit: contain; display: block;
+      border: 1px solid rgba(201,168,76,0.15);
+      transform: scale(0.94); transition: transform 0.4s ease;
+    }
+    .lightbox.open .lightbox-img-wrap img { transform: scale(1); }
+
+    .lightbox-caption {
+      position: absolute; bottom: -2.5rem; left: 0; right: 0;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      color: rgba(255,255,255,0.5); font-style: italic;
     }
 
-    .lb-inner {
-      position: relative; z-index: 1;
-      max-width: 90vw; max-height: 90vh;
-      display: flex; flex-direction: column;
-      transform: scale(0.94); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-    }
-    .lightbox.open .lb-inner { transform: scale(1); }
-
-    .lb-img-wrap {
-      position: relative; overflow: hidden;
-      max-height: 78vh;
-    }
-    .lb-img-wrap img {
-      display: block; max-width: 90vw; max-height: 78vh;
-      width: auto; height: auto;
-      object-fit: contain;
-    }
-    /* Gold frame on lightbox */
-    .lb-img-wrap::before {
-      content: '';
-      position: absolute; top: -6px; left: -6px; right: 6px; bottom: 6px;
-      border: 1px solid rgba(201,168,76,0.25);
-      pointer-events: none; z-index: 1;
-    }
-
-    .lb-meta {
-      padding: 1rem 0;
-      display: flex; align-items: center; justify-content: space-between;
-      border-top: 1px solid rgba(201,168,76,0.15);
-      margin-top: 1.2rem;
-    }
-    .lb-caption {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem; color: rgba(255,255,255,0.65); font-style: italic;
-    }
-    .lb-counter {
-      font-family: 'Cinzel', serif; font-size: 0.62rem;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(201,168,76,0.5);
-    }
-
-    .lb-close {
-      position: absolute; top: -3.5rem; right: 0;
+    .lightbox-close {
+      position: fixed; top: 2rem; right: 2rem;
       background: none; border: 1px solid rgba(201,168,76,0.3);
-      color: rgba(255,255,255,0.6); font-size: 1.2rem; line-height: 1;
-      width: 42px; height: 42px; cursor: pointer;
+      color: rgba(255,255,255,0.6); width: 44px; height: 44px;
       display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.2rem;
       transition: all 0.3s;
     }
-    .lb-close:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-close:hover { border-color: var(--gold); color: var(--gold-light); }
 
-    .lb-prev, .lb-next {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: none; border: 1px solid rgba(201,168,76,0.25);
-      color: rgba(255,255,255,0.55); width: 48px; height: 48px;
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: all 0.3s; font-size: 1.2rem;
+    /* Prev / Next */
+    .lightbox-nav {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      background: none; border: 1px solid rgba(201,168,76,0.2);
+      color: rgba(255,255,255,0.5); width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.1rem; transition: all 0.3s;
     }
-    .lb-prev { left: -4.5rem; }
-    .lb-next { right: -4.5rem; }
-    .lb-prev:hover, .lb-next:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.06); }
+    .lightbox-nav:hover { border-color: var(--gold); color: var(--gold-light); }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
 
-    @media (max-width: 700px) {
-      .lb-prev { left: -2.8rem; }
-      .lb-next { right: -2.8rem; }
-      .lb-img-wrap img { max-width: 82vw; }
-    }
+    /* ── SHARED HELPERS ── */
+    .section-label { font-family: 'Cinzel', serif; font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+    .section-label::before { content: ''; width: 28px; height: 1px; background: var(--gold); display: inline-block; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--gold); color: var(--green); padding: 15px 34px; text-decoration: none; transition: all 0.35s ease; position: relative; overflow: hidden; }
+    .btn-primary::before { content: ''; position: absolute; top: 0; left: -100%; right: 100%; bottom: 0; background: var(--gold-light); transition: left 0.35s, right 0.35s; }
+    .btn-primary:hover::before { left: 0; right: 0; }
+    .btn-primary span { position: relative; }
+    .btn-outline-light { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(201,168,76,0.4); color: var(--gold-light); padding: 15px 34px; text-decoration: none; transition: all 0.35s ease; }
+    .btn-outline-light:hover { background: rgba(201,168,76,0.08); border-color: var(--gold); }
 
-    /* ── FEATURED ROW (first 3 wide) ── */
-    .featured-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    @media (max-width: 900px) { .featured-row { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 560px) { .featured-row { grid-template-columns: 1fr; } }
+    /* ── SCROLL REVEAL ── */
+    [data-reveal] { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    [data-reveal].visible { opacity: 1; transform: none; }
 
-    .featured-item {
-      position: relative; overflow: hidden;
-      cursor: pointer; display: block;
-      transition: opacity 0.5s ease;
-    }
-    .featured-item.hidden { display: none; }
-    .featured-item .gallery-img-wrap { height: 100%; }
-    .featured-item .gallery-img-wrap img { height: 100%; object-fit: cover; }
-    .featured-item:first-child .gallery-img-wrap { min-height: 380px; }
-    .featured-item:not(:first-child) .gallery-img-wrap { min-height: 180px; }
-    .featured-item::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 100%;
-      height: 2px; background: var(--gold);
-      transition: right 0.4s ease;
-    }
-    .featured-item:hover::after { right: 0; }
-    .featured-item:hover .gallery-img-wrap img { transform: scale(1.06); filter: brightness(0.95) contrast(1.08); }
-    .featured-item:hover .gallery-overlay { opacity: 1; }
-    .featured-item:hover .overlay-label,
-    .featured-item:hover .overlay-caption { transform: translateY(0); }
-    .featured-item:hover .overlay-icon { transform: scale(1) rotate(0deg); }
-
-    /* ── STATS RIBBON ── */
-    .stats-ribbon {
-      background: var(--green);
-      padding: 4rem 2.5rem;
-      border-top: 1px solid rgba(201,168,76,0.12);
-      border-bottom: 1px solid rgba(201,168,76,0.12);
-    }
-    .stats-inner {
-      max-width: 1280px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-    }
-    @media (max-width: 700px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } }
-
-    .stat-card {
-      padding: 2rem;
-      border-right: 1px solid rgba(201,168,76,0.1);
-      text-align: center;
-    }
-    .stat-card:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem; font-weight: 300; color: var(--gold-light);
-      line-height: 1; display: block; margin-bottom: 0.5rem;
-    }
-    .stat-label {
-      font-family: 'Cinzel', serif; font-size: 0.6rem;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-    }
-
-    /* ── CTA SECTION ── */
-    .cta-section {
-      background: var(--cream); padding: 8rem 2.5rem; text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: 600px; height: 600px; border-radius: 50%;
-      border: 1px solid rgba(201,168,76,0.1); pointer-events: none;
-    }
-    .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    .cta-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 300;
-      color: var(--green); line-height: 1.15; margin-bottom: 1.5rem;
-    }
-    .cta-title em { font-style: italic; color: var(--gold); }
-    .cta-sub { font-size: 0.9rem; color: rgba(10,61,46,0.55); margin-bottom: 3rem; line-height: 1.8; }
+    /* ── CTA ── */
+    .cta-section { background: var(--green); padding: 8rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 80vw; height: 80vw; max-width: 700px; max-height: 700px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.07); pointer-events: none; }
+    .cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 4rem); font-weight: 300; color: #fff; line-height: 1.15; margin-bottom: 1.5rem; }
+    .cta-title em { font-style: italic; color: var(--gold-light); }
+    .cta-sub { font-size: 0.9rem; color: rgba(255,255,255,0.45); margin-bottom: 3rem; line-height: 1.8; }
 
     /* ── FOOTER ── */
     footer { background: #071f18; color: rgba(255,255,255,0.45); padding: 5rem 2.5rem 2.5rem; }
     .footer-inner { max-width: 1280px; margin: 0 auto; }
-    .footer-top {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 4rem; padding-bottom: 4rem;
-      border-bottom: 1px solid rgba(201,168,76,0.1);
-    }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(201,168,76,0.1); }
     @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
     @media (max-width: 520px)  { .footer-top { grid-template-columns: 1fr; } }
-
     .footer-brand-name { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--gold-light); letter-spacing: 0.08em; display: block; margin-bottom: 1rem; }
     .footer-tagline { font-size: 0.84rem; color: rgba(255,255,255,0.3); line-height: 1.8; margin-bottom: 1.5rem; }
     .footer-socials { display: flex; gap: 0.8rem; }
@@ -517,17 +307,16 @@
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
     .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.22); }
 
-    /* Floating WA */
     .wa-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 80; width: 56px; height: 56px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(201,168,76,0.4); color: var(--green); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
     .wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(201,168,76,0.5); background: var(--gold-light); }
     .wa-float svg { width: 24px; height: 24px; }
 
     @media (max-width: 640px) {
       .page-hero { padding: 130px 1.5rem 80px; }
-      .gallery-section { padding: 3rem 1.2rem 5rem; }
-      .masonry-grid { columns: 2 160px; column-gap: 1rem; }
-      .gallery-item { margin-bottom: 1rem; }
-      .stats-ribbon, .cta-section { padding: 4rem 1.5rem; }
+      .gallery-section { padding: 3rem 1rem 5rem; }
+      .cta-section { padding: 5rem 1.5rem; }
+      .lightbox-prev { left: 0.5rem; }
+      .lightbox-next { right: 0.5rem; }
     }
   </style>
 </head>
@@ -578,312 +367,238 @@
     <div class="hero-ring hero-ring-1"></div>
     <div class="hero-ring hero-ring-2"></div>
     <div class="page-hero-inner">
-      <div>
-        <p class="page-hero-eyebrow">KK Events — Our Work</p>
-        <h1 class="page-hero-title">Our <em>Portfolio</em></h1>
-        <p class="page-hero-sub">
-          Moments we've brought to life — vibrant, cultural, and utterly unforgettable. Every image tells a story of precision, passion, and purpose.
-        </p>
-      </div>
-      <div class="hero-meta">
-        <span class="hero-meta-num">200+</span>
-        <span class="hero-meta-label">Events Delivered</span>
-        <div class="hero-meta-divider"></div>
-        <span class="hero-meta-num">8+</span>
-        <span class="hero-meta-label">Years of Excellence</span>
-      </div>
+      <p class="page-hero-eyebrow">KK Events — Our Work</p>
+      <h1 class="page-hero-title">Our <em>Portfolio</em></h1>
+      <p class="page-hero-sub">Moments we've brought to life — vibrant, cultural, and unforgettable. Every frame tells a story of excellence.</p>
+      <div class="gold-rule"></div>
     </div>
   </section>
 
   <!-- ── FILTER BAR ── -->
-  <div class="filter-section" id="filterBar">
-    <div class="filter-inner">
-      <button class="filter-btn active" data-filter="all">All Events <span class="filter-count" id="count-all">20</span></button>
-      <button class="filter-btn" data-filter="cultural">Cultural <span class="filter-count" id="count-cultural"></span></button>
-      <button class="filter-btn" data-filter="celebration">Celebrations <span class="filter-count" id="count-celebration"></span></button>
-      <button class="filter-btn" data-filter="fiesta">Fiesta / Games <span class="filter-count" id="count-fiesta"></span></button>
-      <button class="filter-btn" data-filter="vendor">Vendor / Promo <span class="filter-count" id="count-vendor"></span></button>
-      <button class="filter-btn" data-filter="promotion">Promotion <span class="filter-count" id="count-promotion"></span></button>
+  <div class="filter-bar">
+    <div class="filter-bar-inner">
+      <button class="filter-btn active" data-filter="all">All Events</button>
+      <button class="filter-btn" data-filter="cultural">Cultural</button>
+      <button class="filter-btn" data-filter="celebration">Celebrations</button>
+      <button class="filter-btn" data-filter="fiesta">Fiesta / Games</button>
+      <button class="filter-btn" data-filter="vendor">Vendor / Promo</button>
+      <button class="filter-btn" data-filter="promotion">Promotion</button>
+      <button class="filter-btn" data-filter="community">Community</button>
     </div>
   </div>
 
   <!-- ── GALLERY ── -->
   <section class="gallery-section">
     <div class="gallery-inner">
+      <p class="gallery-count" id="galleryCount"><span id="visibleCount">20</span> of 20 moments</p>
 
-      <!-- Featured Row -->
-      <div class="featured-row" id="featuredRow">
-        <figure class="featured-item gallery-item" data-category="cultural" data-src="images/portfolio/cultural-procession-1.jpg" data-caption="Traditional royal procession – elegance and culture in motion">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/cultural-procession-1.jpg" alt="Traditional procession with royal fan and colorful attire" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Cultural</span>
-              <span class="overlay-caption">Traditional royal procession – elegance and culture in motion</span>
-            </div>
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- 1 -->
+        <div class="gallery-item" data-category="cultural" data-caption="Traditional royal procession – elegance and culture in motion">
+          <img src="images/portfolio/cultural-procession-1.jpg" alt="Traditional procession" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Cultural</span>
+            <p class="gallery-caption">Traditional royal procession</p>
           </div>
-        </figure>
-        <figure class="featured-item gallery-item" data-category="vendor" data-src="images/portfolio/market-stalls-walking.jpg" data-caption="Vibrant outdoor market activation – engaging visitors & brands">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/market-stalls-walking.jpg" alt="Outdoor vendor activation" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Vendor</span>
-              <span class="overlay-caption">Outdoor market activation – engaging visitors & brands</span>
-            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="gallery-item" data-category="vendor" data-caption="Vibrant outdoor market activation – engaging visitors & brands">
+          <img src="images/portfolio/market-stalls-walking.jpg" alt="Outdoor market activation" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Vendor / Promo</span>
+            <p class="gallery-caption">Outdoor market activation</p>
           </div>
-        </figure>
-        <figure class="featured-item gallery-item" data-category="fiesta" data-src="images/portfolio/welcome-horse-entrance.jpg" data-caption="Grand welcome entrance – Ilorin Game Fiesta highlight">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/welcome-horse-entrance.jpg" alt="Dramatic horse entrance at Ilorin Game Fiesta" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Fiesta</span>
-              <span class="overlay-caption">Grand welcome entrance – Ilorin Game Fiesta highlight</span>
-            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="gallery-item" data-category="vendor" data-caption="Kafowo Oil booth – strategic product showcase & branding">
+          <img src="images/portfolio/kafowo-oil-booth.jpg" alt="Kafowo Oil booth" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Vendor / Promo</span>
+            <p class="gallery-caption">Kafowo Oil branded booth</p>
           </div>
-        </figure>
-      </div>
+        </div>
 
-      <!-- Masonry Grid -->
-      <div class="masonry-grid" id="masonryGrid">
-
-        <figure class="gallery-item" data-category="vendor" data-src="images/portfolio/kafowo-oil-booth.jpg" data-caption="Kafowo Oil booth – strategic product showcase & branding">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/kafowo-oil-booth.jpg" alt="Kafowo Oil branded stall" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Vendor / Promo</span>
-              <span class="overlay-caption">Kafowo Oil booth – strategic product showcase</span>
-            </div>
+        <!-- 4 -->
+        <div class="gallery-item" data-category="vendor" data-caption="Close-up product display – premium oil & snack branding">
+          <img src="images/portfolio/kafowo-oil-display.jpg" alt="Kafowo Oil display" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Vendor / Promo</span>
+            <p class="gallery-caption">Premium product display</p>
           </div>
-          <figcaption class="gallery-caption">Kafowo Oil booth – strategic product showcase & branding</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="vendor" data-src="images/portfolio/kafowo-oil-display.jpg" data-caption="Close-up product display – premium oil & snack branding">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/kafowo-oil-display.jpg" alt="Kafowo Oil products detail" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Vendor / Promo</span>
-              <span class="overlay-caption">Close-up product display – premium branding</span>
-            </div>
+        <!-- 5 -->
+        <div class="gallery-item" data-category="promotion" data-caption="2026 New Year sponsor appreciation – Ilorin Game Fiesta">
+          <img src="images/portfolio/ilorin-game-fiesta-2026.jpg" alt="Ilorin Game Fiesta 2026" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Promotion</span>
+            <p class="gallery-caption">Ilorin Game Fiesta 2026</p>
           </div>
-          <figcaption class="gallery-caption">Close-up product display – premium oil & snack branding</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="promotion" data-src="images/portfolio/ilorin-game-fiesta-2026.jpg" data-caption="2026 New Year sponsor appreciation – Ilorin Game Fiesta">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/ilorin-game-fiesta-2026.jpg" alt="New Year 2026 Ilorin Game Fiesta" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Promotion</span>
-              <span class="overlay-caption">2026 New Year sponsor appreciation</span>
-            </div>
+        <!-- 6 -->
+        <div class="gallery-item" data-category="community" data-caption="Live hosting energy – crowd reactions & excitement">
+          <img src="images/portfolio/live-hosting-laugh.jpg" alt="Live hosting" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Community</span>
+            <p class="gallery-caption">Live hosting & crowd energy</p>
           </div>
-          <figcaption class="gallery-caption">2026 New Year sponsor appreciation – Ilorin Game Fiesta</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="vendor" data-src="images/portfolio/ijebu-palm-stall.jpg" data-caption="Local delicacies stall – palm oil, garri & snacks">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/ijebu-palm-stall.jpg" alt="Local product stall" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Vendor / Promo</span>
-              <span class="overlay-caption">Local delicacies stall</span>
-            </div>
+        <!-- 7 -->
+        <div class="gallery-item" data-category="vendor" data-caption="Local delicacies stall – palm oil, garri & snacks">
+          <img src="images/portfolio/ijebu-palm-stall.jpg" alt="Ijebu palm stall" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Vendor / Promo</span>
+            <p class="gallery-caption">Local delicacies stall</p>
           </div>
-          <figcaption class="gallery-caption">Local delicacies stall – palm oil, garri & snacks</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="fiesta" data-src="images/portfolio/board-game-hands.jpg" data-caption="Hands-on gaming fun – Ilorin Game Fiesta moments">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/board-game-hands.jpg" alt="Community gaming session" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Fiesta / Games</span>
-              <span class="overlay-caption">Hands-on gaming fun</span>
-            </div>
+        <!-- 8 -->
+        <div class="gallery-item" data-category="fiesta" data-caption="Hands-on gaming fun – Ilorin Game Fiesta moments">
+          <img src="images/portfolio/board-game-hands.jpg" alt="Board game session" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Fiesta / Games</span>
+            <p class="gallery-caption">Hands-on gaming fun</p>
           </div>
-          <figcaption class="gallery-caption">Hands-on gaming fun – Ilorin Game Fiesta moments</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="promotion" data-src="images/portfolio/sponsor-wall-logos.jpg" data-caption="Sponsor wall of honor – proud partner showcase">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/sponsor-wall-logos.jpg" alt="Sponsor backdrop with partner brands" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Promotion</span>
-              <span class="overlay-caption">Sponsor wall of honor</span>
-            </div>
+        <!-- 9 -->
+        <div class="gallery-item" data-category="promotion" data-caption="Sponsor wall of honor – proud partner showcase">
+          <img src="images/portfolio/sponsor-wall-logos.jpg" alt="Sponsor wall" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Promotion</span>
+            <p class="gallery-caption">Sponsor wall of honour</p>
           </div>
-          <figcaption class="gallery-caption">Sponsor wall of honor – proud partner showcase</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="celebration" data-src="images/portfolio/purple-dance-group.jpg" data-caption="Energetic cultural dance – celebration in full swing">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/purple-dance-group.jpg" alt="Vibrant group dance performance" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Celebration</span>
-              <span class="overlay-caption">Energetic cultural dance</span>
-            </div>
+        <!-- 10 -->
+        <div class="gallery-item" data-category="celebration" data-caption="Energetic cultural dance – celebration in full swing">
+          <img src="images/portfolio/purple-dance-group.jpg" alt="Dance performance" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Celebrations</span>
+            <p class="gallery-caption">Cultural dance performance</p>
           </div>
-          <figcaption class="gallery-caption">Energetic cultural dance – celebration in full swing</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="vendor" data-src="images/portfolio/booth-interaction.jpg" data-caption="Active booth engagement – visitor interaction">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/booth-interaction.jpg" alt="Engaged visitors at branded booth" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Vendor / Promo</span>
-              <span class="overlay-caption">Active booth engagement</span>
-            </div>
+        <!-- 11 -->
+        <div class="gallery-item" data-category="fiesta" data-caption="Grand welcome entrance – Ilorin Game Fiesta highlight">
+          <img src="images/portfolio/welcome-horse-entrance.jpg" alt="Horse entrance" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Fiesta / Games</span>
+            <p class="gallery-caption">Grand welcome entrance</p>
           </div>
-          <figcaption class="gallery-caption">Active booth engagement – visitor interaction</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="cultural" data-src="images/portfolio/throne-portrait.jpg" data-caption="Regal throne portrait – traditional elegance">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/throne-portrait.jpg" alt="Regal traditional portrait" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Cultural</span>
-              <span class="overlay-caption">Regal throne portrait</span>
-            </div>
+        <!-- 12 -->
+        <div class="gallery-item" data-category="vendor" data-caption="Active booth engagement – visitor interaction">
+          <img src="images/portfolio/booth-interaction.jpg" alt="Booth interaction" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Vendor / Promo</span>
+            <p class="gallery-caption">Active booth engagement</p>
           </div>
-          <figcaption class="gallery-caption">Regal throne portrait – traditional elegance</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="promotion" data-src="images/portfolio/ig-live-promo.jpg" data-caption="Instagram Live promo – collaboration & guest feature">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/ig-live-promo.jpg" alt="Instagram Live session" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Promotion</span>
-              <span class="overlay-caption">Instagram Live promo – collaboration</span>
-            </div>
+        <!-- 13 -->
+        <div class="gallery-item" data-category="cultural" data-caption="Regal throne portrait – traditional elegance">
+          <img src="images/portfolio/throne-portrait.jpg" alt="Throne portrait" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Cultural</span>
+            <p class="gallery-caption">Regal throne portrait</p>
           </div>
-          <figcaption class="gallery-caption">Instagram Live promo – collaboration & guest feature</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="celebration" data-src="images/portfolio/corridor-group-walk.jpg" data-caption="Joyful group entrance – indoor celebration moment">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/corridor-group-walk.jpg" alt="Group entrance at indoor celebration" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Celebration</span>
-              <span class="overlay-caption">Joyful group entrance</span>
-            </div>
+        <!-- 14 -->
+        <div class="gallery-item" data-category="promotion" data-caption="Instagram Live promo – collaboration & guest feature">
+          <img src="images/portfolio/ig-live-promo.jpg" alt="IG Live promo" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Promotion</span>
+            <p class="gallery-caption">Instagram Live collaboration</p>
           </div>
-          <figcaption class="gallery-caption">Joyful group entrance – indoor celebration moment</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="fiesta" data-src="images/portfolio/scrabble-game.jpg" data-caption="Competitive Scrabble action – game fiesta energy">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/scrabble-game.jpg" alt="Competitive board game session" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Fiesta / Games</span>
-              <span class="overlay-caption">Competitive Scrabble action</span>
-            </div>
+        <!-- 15 -->
+        <div class="gallery-item" data-category="celebration" data-caption="Joyful group entrance – indoor celebration moment">
+          <img src="images/portfolio/corridor-group-walk.jpg" alt="Group entrance" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Celebrations</span>
+            <p class="gallery-caption">Joyful group entrance</p>
           </div>
-          <figcaption class="gallery-caption">Competitive Scrabble action – game fiesta energy</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="vendor" data-src="images/portfolio/palm-product-stall.jpg" data-caption="Local snacks & palm oil stall – authentic display">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/palm-product-stall.jpg" alt="Palm oil and local snacks" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Vendor / Promo</span>
-              <span class="overlay-caption">Local snacks & palm oil stall</span>
-            </div>
+        <!-- 16 -->
+        <div class="gallery-item" data-category="fiesta" data-caption="Competitive Scrabble action – game fiesta energy">
+          <img src="images/portfolio/scrabble-game.jpg" alt="Scrabble game" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Fiesta / Games</span>
+            <p class="gallery-caption">Competitive Scrabble action</p>
           </div>
-          <figcaption class="gallery-caption">Local snacks & palm oil stall – authentic display</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="cultural" data-src="images/portfolio/elder-money-blessing.jpg" data-caption="Traditional blessing & giving – cultural moment">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/elder-money-blessing.jpg" alt="Traditional blessing ceremony" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Cultural</span>
-              <span class="overlay-caption">Traditional blessing & giving</span>
-            </div>
+        <!-- 17 -->
+        <div class="gallery-item" data-category="vendor" data-caption="Local snacks & palm oil stall – authentic display">
+          <img src="images/portfolio/palm-product-stall.jpg" alt="Palm product stall" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Vendor / Promo</span>
+            <p class="gallery-caption">Local snacks & palm oil</p>
           </div>
-          <figcaption class="gallery-caption">Traditional blessing & giving – cultural moment</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="fiesta" data-src="images/portfolio/game-booth-group.jpg" data-caption="Happy visitors at game booth – fiesta joy">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/game-booth-group.jpg" alt="Visitors enjoying games" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Fiesta / Games</span>
-              <span class="overlay-caption">Happy visitors at game booth</span>
-            </div>
+        <!-- 18 -->
+        <div class="gallery-item" data-category="cultural" data-caption="Traditional blessing & giving – a cherished cultural moment">
+          <img src="images/portfolio/elder-money-blessing.jpg" alt="Elder blessing" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Cultural</span>
+            <p class="gallery-caption">Traditional blessing ceremony</p>
           </div>
-          <figcaption class="gallery-caption">Happy visitors at game booth – fiesta joy</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="cultural" data-src="images/portfolio/white-attire-fan.jpg" data-caption="Elegant traditional attire – graceful procession">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/white-attire-fan.jpg" alt="Elegant traditional attire" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Cultural</span>
-              <span class="overlay-caption">Elegant traditional attire</span>
-            </div>
+        <!-- 19 -->
+        <div class="gallery-item" data-category="fiesta" data-caption="Happy visitors at game booth – fiesta joy">
+          <img src="images/portfolio/game-booth-group.jpg" alt="Game booth group" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Fiesta / Games</span>
+            <p class="gallery-caption">Game booth happiness</p>
           </div>
-          <figcaption class="gallery-caption">Elegant traditional attire – graceful procession</figcaption>
-        </figure>
+        </div>
 
-        <figure class="gallery-item" data-category="celebration" data-src="images/portfolio/live-hosting-laugh.jpg" data-caption="Live hosting energy – crowd reactions & excitement">
-          <div class="gallery-img-wrap">
-            <img src="images/portfolio/live-hosting-laugh.jpg" alt="Energetic live hosting" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="overlay-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div>
-              <span class="overlay-label">Celebration</span>
-              <span class="overlay-caption">Live hosting energy</span>
-            </div>
+        <!-- 20 -->
+        <div class="gallery-item" data-category="cultural" data-caption="Elegant traditional attire – graceful procession">
+          <img src="images/portfolio/white-attire-fan.jpg" alt="Traditional attire" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Cultural</span>
+            <p class="gallery-caption">Elegant traditional attire</p>
           </div>
-          <figcaption class="gallery-caption">Live hosting energy – crowd reactions & excitement</figcaption>
-        </figure>
+        </div>
 
-      </div>
+      </div><!-- /gallery-grid -->
 
-      <!-- Empty state -->
-      <div class="empty-state" id="emptyState">
-        <p class="empty-state-icon">◇</p>
-        <p>No events found in this category.</p>
-      </div>
+      <p class="gallery-empty" id="galleryEmpty">No events found in this category.</p>
     </div>
   </section>
 
-  <!-- ── STATS RIBBON ── -->
-  <div class="stats-ribbon" data-reveal>
-    <div class="stats-inner">
-      <div class="stat-card"><span class="stat-num">200+</span><span class="stat-label">Events Delivered</span></div>
-      <div class="stat-card"><span class="stat-num">8+</span><span class="stat-label">Years Experience</span></div>
-      <div class="stat-card"><span class="stat-num">100%</span><span class="stat-label">Client Satisfaction</span></div>
-      <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Service Categories</span></div>
+  <!-- ── LIGHTBOX ── -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="" id="lightboxImg">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
   </div>
 
   <!-- ── CTA ── -->
   <section class="cta-section">
     <div class="cta-inner" data-reveal>
-      <p class="section-label" style="justify-content:center;">Ready to Begin?</p>
-      <h2 class="cta-title">
-        Want Your Event <em>Featured Here?</em>
-      </h2>
-      <p class="cta-sub">
-        Let's create something extraordinary together. Reach out today for a free consultation with Kahbikushii.
-      </p>
+      <p class="section-label" style="justify-content:center;">Join Our Portfolio</p>
+      <h2 class="cta-title">Want Your Event <em>Featured Here?</em></h2>
+      <p class="cta-sub">Let's create something extraordinary together — and add your story to our collection of unforgettable moments.</p>
       <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
-        <a href="contact.html" class="btn-primary"><span>Get in Touch</span> <span>→</span></a>
+        <a href="contact.html" class="btn-primary"><span>Get in Touch</span><span>→</span></a>
         <a href="services.html" class="btn-outline-light">View Our Services</a>
       </div>
     </div>
@@ -938,175 +653,111 @@
     </div>
   </footer>
 
-  <!-- ── LIGHTBOX ── -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <div class="lb-backdrop" id="lbBackdrop"></div>
-    <div class="lb-inner">
-      <button class="lb-close" id="lbClose" aria-label="Close">×</button>
-      <button class="lb-prev" id="lbPrev" aria-label="Previous">←</button>
-      <button class="lb-next" id="lbNext" aria-label="Next">→</button>
-      <div class="lb-img-wrap">
-        <img src="" alt="" id="lbImg">
-      </div>
-      <div class="lb-meta">
-        <span class="lb-caption" id="lbCaption"></span>
-        <span class="lb-counter" id="lbCounter"></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Floating WA -->
   <a href="https://wa.me/2348102005493?text=Hello%20Kahbikushii%2C%20I'm%20interested%20in%20your%20services..." class="wa-float" target="_blank" aria-label="WhatsApp">
     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 2.14.7 4.11 1.88 5.71L2 22l4.29-1.88C7.89 21.3 9.86 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm3.78 14.38c-.25.7-1.47 1.34-2.06 1.4-.59.06-1.34-.17-2.3-.64-.96-.47-1.76-1.02-2.55-1.76-.79-.74-1.48-1.6-2.06-2.6-.58-1-.87-2.15-.92-3.26-.05-1.11.28-2.2.96-3.07.68-.87 1.65-1.4 2.74-1.4.3 0 .6.03.89.09.66.14 1.25.48 1.73.98.48.5.8 1.12.93 1.79.13.67.05 1.35-.23 1.98-.28.63-.76 1.2-1.38 1.62-.62.42-1.34.65-2.07.65-.41 0-.81-.07-1.19-.21l-.38-.14c-.88-.33-1.6-.99-2.07-1.84-.47-.85-.68-1.84-.59-2.81.09-.97.44-1.89 1-2.62.56-.73 1.35-1.27 2.25-1.5.9-.23 1.84-.25 2.74-.06.9.19 1.74.66 2.4 1.35.66.69 1.1 1.56 1.25 2.5.15.94.06 1.9-.26 2.78z"/></svg>
   </a>
 
   <script>
     // ── Mobile drawer ──
-    const hamburger    = document.getElementById('hamburger');
-    const drawer       = document.getElementById('mobileDrawer');
-    const drawerClose  = document.getElementById('drawerClose');
-    const drawerOverlay= document.getElementById('drawerOverlay');
-    const openDrawer   = () => { drawer.classList.add('open');    document.body.style.overflow='hidden'; };
-    const closeDrawer  = () => { drawer.classList.remove('open'); document.body.style.overflow=''; };
+    const hamburger     = document.getElementById('hamburger');
+    const drawer        = document.getElementById('mobileDrawer');
+    const drawerClose   = document.getElementById('drawerClose');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const openDrawer    = () => { drawer.classList.add('open');    document.body.style.overflow='hidden'; };
+    const closeDrawer   = () => { drawer.classList.remove('open'); document.body.style.overflow=''; };
     hamburger.addEventListener('click', openDrawer);
     drawerClose.addEventListener('click', closeDrawer);
     drawerOverlay.addEventListener('click', closeDrawer);
-    document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+    document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeDrawer(); closeLightbox(); } });
 
     // ── Scroll reveal ──
-    const revealObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revObs.unobserve(e.target); }});
     }, { threshold: 0.1 });
-    document.querySelectorAll('[data-reveal]').forEach(el => revealObs.observe(el));
+    document.querySelectorAll('[data-reveal]').forEach(el => revObs.observe(el));
 
-    // ── Gallery & Filter ──
-    const allItems = document.querySelectorAll('.gallery-item');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const emptyState = document.getElementById('emptyState');
-
-    // Count per category
-    const counts = {};
-    allItems.forEach(item => {
-      const cat = item.dataset.category;
-      counts[cat] = (counts[cat] || 0) + 1;
-    });
-    document.getElementById('count-all').textContent = allItems.length;
-    Object.entries({
-      cultural: 'count-cultural',
-      celebration: 'count-celebration',
-      fiesta: 'count-fiesta',
-      vendor: 'count-vendor',
-      promotion: 'count-promotion'
-    }).forEach(([cat, id]) => {
-      const el = document.getElementById(id);
-      if(el) el.textContent = counts[cat] || 0;
-    });
-
-    let currentFilter = 'all';
+    // ── Gallery Filter ──
+    const filterBtns   = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const countEl      = document.getElementById('visibleCount');
+    const emptyEl      = document.getElementById('galleryEmpty');
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-        if(filter === currentFilter) return;
-        currentFilter = filter;
-
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
+        const filter = btn.dataset.filter;
         let visible = 0;
-        allItems.forEach(item => {
+        galleryItems.forEach(item => {
           const match = filter === 'all' || item.dataset.category === filter;
-          if(match) {
-            item.classList.remove('hidden');
-            visible++;
-          } else {
-            item.classList.add('hidden');
-          }
+          item.classList.toggle('hidden', !match);
+          if(match) visible++;
         });
-
-        emptyState.classList.toggle('visible', visible === 0);
+        countEl.textContent = visible;
+        emptyEl.classList.toggle('visible', visible === 0);
       });
     });
 
     // ── Lightbox ──
-    const lightbox = document.getElementById('lightbox');
-    const lbImg    = document.getElementById('lbImg');
-    const lbCaption= document.getElementById('lbCaption');
-    const lbCounter= document.getElementById('lbCounter');
-    const lbClose  = document.getElementById('lbClose');
-    const lbBackdrop=document.getElementById('lbBackdrop');
-    const lbPrev   = document.getElementById('lbPrev');
-    const lbNext   = document.getElementById('lbNext');
+    const lightbox     = document.getElementById('lightbox');
+    const lightboxImg  = document.getElementById('lightboxImg');
+    const lightboxCap  = document.getElementById('lightboxCaption');
+    const lightboxClose= document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
 
+    let currentItems = [];
     let currentIndex = 0;
-    let visibleItems = [];
 
-    function getVisibleItems() {
-      return Array.from(allItems).filter(item => !item.classList.contains('hidden'));
-    }
+    const getVisibleItems = () => [...galleryItems].filter(i => !i.classList.contains('hidden'));
 
-    function openLightbox(index) {
-      visibleItems = getVisibleItems();
-      currentIndex = index;
+    const openLightbox = (item) => {
+      currentItems = getVisibleItems();
+      currentIndex = currentItems.indexOf(item);
       showLightboxItem(currentIndex);
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
-    }
+    };
 
-    function closeLightbox() {
+    const closeLightbox = () => {
       lightbox.classList.remove('open');
       document.body.style.overflow = '';
-      drawer.classList.remove('open');
-    }
+    };
 
-    function showLightboxItem(idx) {
-      const item = visibleItems[idx];
+    const showLightboxItem = (idx) => {
+      const item = currentItems[idx];
       if(!item) return;
-      const src = item.dataset.src || item.querySelector('img')?.src;
-      const cap = item.dataset.caption || item.querySelector('.gallery-caption')?.textContent || '';
-      lbImg.src = src;
-      lbImg.alt = cap;
-      lbCaption.textContent = cap;
-      lbCounter.textContent = `${idx + 1} / ${visibleItems.length}`;
-    }
+      const img = item.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCap.textContent = item.dataset.caption || '';
+      currentIndex = idx;
+    };
 
-    allItems.forEach((item, i) => {
-      item.addEventListener('click', () => {
-        visibleItems = getVisibleItems();
-        const visIdx = visibleItems.indexOf(item);
-        openLightbox(visIdx >= 0 ? visIdx : 0);
-      });
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => openLightbox(item));
     });
 
-    lbClose.addEventListener('click', closeLightbox);
-    lbBackdrop.addEventListener('click', closeLightbox);
-    lbPrev.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
-      showLightboxItem(currentIndex);
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+
+    lightboxPrev.addEventListener('click', e => {
+      e.stopPropagation();
+      currentItems = getVisibleItems();
+      showLightboxItem((currentIndex - 1 + currentItems.length) % currentItems.length);
     });
-    lbNext.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % visibleItems.length;
-      showLightboxItem(currentIndex);
+    lightboxNext.addEventListener('click', e => {
+      e.stopPropagation();
+      currentItems = getVisibleItems();
+      showLightboxItem((currentIndex + 1) % currentItems.length);
     });
 
+    // Keyboard nav
     document.addEventListener('keydown', e => {
       if(!lightbox.classList.contains('open')) return;
-      if(e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; showLightboxItem(currentIndex); }
-      if(e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % visibleItems.length; showLightboxItem(currentIndex); }
-      if(e.key === 'Escape') closeLightbox();
+      if(e.key === 'ArrowLeft')  lightboxPrev.click();
+      if(e.key === 'ArrowRight') lightboxNext.click();
     });
-
-    // Touch swipe for lightbox
-    let touchStartX = 0;
-    lightbox.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    lightbox.addEventListener('touchend', e => {
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      if(Math.abs(dx) > 50) {
-        if(dx < 0) { currentIndex = (currentIndex + 1) % visibleItems.length; }
-        else { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; }
-        showLightboxItem(currentIndex);
-      }
-    }, { passive: true });
   </script>
 </body>
 </html>
