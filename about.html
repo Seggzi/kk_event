@@ -1,373 +1,805 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="About KK Events – Led by CEO Kahbikushii, delivering premium event planning, promotion, fundraising, content creation and training in Kwara State, Nigeria." />
-    <title>About Us | KK Events – Kwara State</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About KK Events – Led by CEO Kahbikushii, delivering premium event planning, promotion, fundraising, content creation and training in Kwara State, Nigeria." />
+  <title>About Us | KK Events – Kwara State</title>
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
+  <!-- Same luxury fonts as index -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-green': '#065f46',
-                        'brand-gold': '#d4af37',
-                        'brand-gold-dark': '#b8860b',
-                        'brand-gold-light': '#e5c068',
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    :root {
+      --green:       #0a3d2e;
+      --green-mid:   #0d4f3c;
+      --green-light: #145c47;
+      --gold:        #c9a84c;
+      --gold-light:  #e2c97e;
+      --gold-pale:   #f5e9c8;
+      --cream:       #faf7f2;
+      --white:       #ffffff;
+    }
 
-    <style>
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            line-height: 1.7;
-        }
+    html { scroll-behavior: smooth; }
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: 'Playfair Display', serif;
-            letter-spacing: -0.025em;
-        }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--green);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
 
-        .text-balance {
-            text-wrap: balance;
-        }
-    </style>
+    /* Noise grain overlay */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999; opacity: 0.4;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 2rem;
+      background: rgba(10,61,46,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      box-shadow: 0 2px 40px rgba(0,0,0,0.2);
+    }
+    .nav-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px;
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 600;
+      color: var(--gold-light); letter-spacing: 0.08em; text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a {
+      font-family: 'Cinzel', serif; font-size: 0.7rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      position: relative; padding-bottom: 4px; transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 100%;
+      height: 1px; background: var(--gold); transition: right 0.35s ease;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-links a:hover::after { right: 0; }
+    .nav-links a.active { color: var(--gold-light); }
+    .nav-links a.active::after { right: 0; }
+    .nav-cta {
+      background: var(--gold) !important; color: var(--green) !important;
+      padding: 9px 22px !important; font-size: 0.68rem !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--gold-light); margin: 6px 0; transition: 0.3s; }
+    @media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: block; } }
+
+    /* ── MOBILE DRAWER ── */
+    .mobile-drawer {
+      position: fixed; inset: 0; z-index: 200;
+      display: flex; justify-content: flex-end;
+      opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    }
+    .mobile-drawer.open { opacity: 1; pointer-events: all; }
+    .drawer-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
+    .drawer-panel {
+      position: relative; width: 300px; height: 100%;
+      background: var(--green); border-left: 1px solid rgba(201,168,76,0.2);
+      transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+      display: flex; flex-direction: column;
+    }
+    .mobile-drawer.open .drawer-panel { transform: translateX(0); }
+    .drawer-head { padding: 2rem; border-bottom: 1px solid rgba(201,168,76,0.15); display: flex; justify-content: space-between; align-items: center; }
+    .drawer-close { background: none; border: none; cursor: pointer; color: var(--gold-light); font-size: 1.8rem; line-height: 1; }
+    .drawer-nav { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 2rem; gap: 2rem; }
+    .drawer-nav a { font-family: 'Cinzel', serif; font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.8); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.1); padding-bottom: 1.2rem; transition: color 0.3s; }
+    .drawer-nav a:hover { color: var(--gold-light); }
+    .drawer-foot { padding: 2rem; border-top: 1px solid rgba(201,168,76,0.1); color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 160px 2.5rem 100px;
+      background: linear-gradient(150deg, #0a3d2e 0%, #0d4f3c 60%, #0e5a44 100%);
+      position: relative; overflow: hidden;
+    }
+    .page-hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+    /* Decorative ring */
+    .page-hero::before {
+      content: '';
+      position: absolute; top: -20%; right: -5%;
+      width: 60vw; height: 60vw; max-width: 700px; max-height: 700px;
+      border-radius: 50%; border: 1px solid rgba(201,168,76,0.1);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      max-width: 1280px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .page-hero-eyebrow {
+      font-family: 'Cinzel', serif; font-size: 0.68rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: slide-up 0.8s ease 0.2s forwards;
+    }
+    .page-hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); display: inline-block; }
+    .page-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 7vw, 7.5rem); font-weight: 300;
+      color: #fff; line-height: 1.0;
+      opacity: 0; animation: slide-up 1s ease 0.35s forwards;
+    }
+    .page-hero-title em { font-style: italic; color: var(--gold-light); }
+    .page-hero-sub {
+      font-size: 1rem; font-weight: 300;
+      color: rgba(255,255,255,0.55); max-width: 520px;
+      line-height: 1.85; margin-top: 1.5rem;
+      opacity: 0; animation: slide-up 1s ease 0.5s forwards;
+    }
+
+    /* Gold rule under hero */
+    .gold-rule { height: 1px; background: linear-gradient(to right, var(--gold), transparent); width: 120px; margin-top: 2.5rem; opacity: 0; animation: fade-in 1s ease 0.8s forwards; }
+
+    @keyframes slide-up {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ── SHARED HELPERS ── */
+    .section-label {
+      font-family: 'Cinzel', serif; font-size: 0.67rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .section-label::before { content: ''; width: 28px; height: 1px; background: var(--gold); display: inline-block; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: 'Cinzel', serif; font-size: 0.7rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      background: var(--gold); color: var(--green);
+      padding: 15px 34px; text-decoration: none;
+      transition: all 0.35s ease; position: relative; overflow: hidden;
+    }
+    .btn-primary::before {
+      content: ''; position: absolute; top: 0; left: -100%; right: 100%; bottom: 0;
+      background: var(--gold-light); transition: left 0.35s, right 0.35s;
+    }
+    .btn-primary:hover::before { left: 0; right: 0; }
+    .btn-primary span { position: relative; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: 'Cinzel', serif; font-size: 0.7rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.5); color: var(--gold-light);
+      padding: 15px 34px; text-decoration: none; transition: all 0.35s ease;
+    }
+    .btn-outline:hover { background: rgba(201,168,76,0.08); border-color: var(--gold); }
+
+    .btn-outline-dark {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: 'Cinzel', serif; font-size: 0.7rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid rgba(10,61,46,0.3); color: var(--green);
+      padding: 15px 34px; text-decoration: none; transition: all 0.35s ease;
+    }
+    .btn-outline-dark:hover { background: rgba(10,61,46,0.05); border-color: var(--green); }
+
+    /* ── SCROLL REVEAL ── */
+    [data-reveal] { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    [data-reveal].visible { opacity: 1; transform: none; }
+    [data-reveal="left"]  { transform: translateX(-36px); }
+    [data-reveal="right"] { transform: translateX(36px); }
+    [data-reveal="left"].visible,
+    [data-reveal="right"].visible { transform: none; opacity: 1; }
+    [data-reveal-delay="100"] { transition-delay: 0.1s; }
+    [data-reveal-delay="200"] { transition-delay: 0.2s; }
+    [data-reveal-delay="300"] { transition-delay: 0.3s; }
+    [data-reveal-delay="400"] { transition-delay: 0.4s; }
+
+    /* ── CEO PORTRAIT SECTION ── */
+    .ceo-section {
+      background: var(--cream);
+      padding: 8rem 2.5rem;
+    }
+    .ceo-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.1fr; gap: 7rem; align-items: center;
+    }
+    @media (max-width: 900px) { .ceo-inner { grid-template-columns: 1fr; gap: 3rem; } }
+
+    /* Portrait with layered frames */
+    .portrait-stack {
+      position: relative; max-width: 420px;
+    }
+    .portrait-bg-block {
+      position: absolute; top: 1.5rem; left: 1.5rem;
+      right: -1.5rem; bottom: -1.5rem;
+      background: linear-gradient(135deg, var(--green), var(--green-mid));
+      z-index: 0;
+    }
+    .portrait-gold-frame {
+      position: absolute; top: -0.8rem; left: -0.8rem;
+      right: 0.8rem; bottom: 0.8rem;
+      border: 1px solid rgba(201,168,76,0.4);
+      z-index: 2; pointer-events: none;
+    }
+    .portrait-img-wrap {
+      position: relative; z-index: 1;
+      aspect-ratio: 3/4; overflow: hidden;
+    }
+    .portrait-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block; filter: contrast(1.05) brightness(0.95);
+      transition: transform 0.9s ease;
+    }
+    .portrait-stack:hover .portrait-img-wrap img { transform: scale(1.04); }
+
+    /* Floating name plate */
+    .name-plate {
+      position: absolute; bottom: -1.8rem; right: -1.5rem; z-index: 3;
+      background: var(--gold); color: var(--green);
+      padding: 1.2rem 1.8rem;
+      font-family: 'Cinzel', serif;
+    }
+    .name-plate-name { font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; display: block; }
+    .name-plate-role { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.75; }
+
+    /* Bio text */
+    .ceo-bio .section-label { color: var(--gold); }
+    .ceo-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 300;
+      color: var(--green); line-height: 1.1; margin-bottom: 2rem;
+    }
+    .ceo-title em { font-style: italic; color: var(--gold); }
+
+    .bio-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 1.8rem; }
+
+    .bio-para {
+      font-size: 0.95rem; color: rgba(10,61,46,0.7);
+      line-height: 1.9; margin-bottom: 1.2rem;
+    }
+    .bio-para strong { color: var(--green); font-weight: 500; }
+
+    /* Traits row */
+    .traits-row {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      margin: 2rem 0;
+    }
+    .trait {
+      font-family: 'Cinzel', serif; font-size: 0.62rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.4); color: var(--gold);
+      padding: 7px 16px;
+    }
+
+    /* ── PRINCIPLES SECTION ── */
+    .principles-section {
+      background: var(--green);
+      padding: 8rem 2.5rem;
+      position: relative; overflow: hidden;
+    }
+    /* Subtle pattern */
+    .principles-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .principles-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+    .principles-header { max-width: 600px; margin-bottom: 5rem; }
+    .principles-header .section-label { color: var(--gold); }
+    .principles-header .section-label::before { background: var(--gold); }
+    .principles-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300;
+      color: #fff; line-height: 1.1;
+    }
+    .principles-title em { font-style: italic; color: var(--gold-light); }
+
+    .principles-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: rgba(201,168,76,0.08);
+    }
+    @media (max-width: 800px) { .principles-grid { grid-template-columns: 1fr; } }
+
+    .principle-card {
+      background: var(--green);
+      padding: 3rem 2.5rem;
+      position: relative; overflow: hidden;
+      transition: background 0.4s;
+    }
+    .principle-card::after {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 100%;
+      width: 2px; background: var(--gold);
+      transition: bottom 0.4s ease;
+    }
+    .principle-card:hover { background: var(--green-mid); }
+    .principle-card:hover::after { bottom: 0; }
+
+    .principle-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem; font-weight: 300;
+      color: rgba(201,168,76,0.08); line-height: 1;
+      position: absolute; top: 1.5rem; right: 2rem;
+      transition: color 0.4s;
+    }
+    .principle-card:hover .principle-num { color: rgba(201,168,76,0.14); }
+
+    .principle-icon { width: 40px; height: 40px; color: var(--gold); margin-bottom: 1.5rem; }
+
+    .principle-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 500; color: #fff; margin-bottom: 1rem;
+    }
+    .principle-desc { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
+
+    /* ── STORY TIMELINE ── */
+    .story-section {
+      background: var(--white);
+      padding: 8rem 2.5rem;
+    }
+    .story-inner { max-width: 1280px; margin: 0 auto; }
+    .story-header { max-width: 560px; margin-bottom: 5rem; }
+    .story-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 300;
+      color: var(--green); line-height: 1.1;
+    }
+    .story-title em { font-style: italic; color: var(--gold); }
+
+    .timeline { position: relative; padding-left: 3rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
+    }
+    .timeline-item {
+      position: relative; margin-bottom: 3.5rem;
+    }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -3rem; top: 0.4rem;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--gold); transform: translateX(-4px);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+    }
+    .timeline-year {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+    .timeline-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 500; color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .timeline-text { font-size: 0.88rem; color: rgba(10,61,46,0.6); line-height: 1.8; max-width: 520px; }
+
+    /* ── QUOTE PULL ── */
+    .quote-section {
+      background: var(--cream);
+      padding: 7rem 2.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 8rem; line-height: 0.5; color: rgba(201,168,76,0.2);
+      margin-bottom: 1rem; display: block;
+    }
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3.5vw, 3rem); font-weight: 300;
+      color: var(--green); max-width: 800px; margin: 0 auto;
+      line-height: 1.4; font-style: italic;
+    }
+    .quote-text em { color: var(--gold); font-style: normal; }
+    .quote-attr {
+      margin-top: 2rem;
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(10,61,46,0.4);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--green);
+      padding: 8rem 2.5rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 80vw; height: 80vw; max-width: 700px; max-height: 700px;
+      border-radius: 50%; border: 1px solid rgba(201,168,76,0.07); pointer-events: none;
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 4rem); font-weight: 300;
+      color: #fff; line-height: 1.15; margin-bottom: 1.5rem;
+    }
+    .cta-title em { font-style: italic; color: var(--gold-light); }
+    .cta-sub { font-size: 0.9rem; color: rgba(255,255,255,0.45); margin-bottom: 3rem; line-height: 1.8; }
+
+    /* ── FOOTER ── */
+    footer { background: #071f18; color: rgba(255,255,255,0.45); padding: 5rem 2.5rem 2.5rem; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem; padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
+    @media (max-width: 520px)  { .footer-top { grid-template-columns: 1fr; } }
+
+    .footer-brand-name { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--gold-light); letter-spacing: 0.08em; display: block; margin-bottom: 1rem; }
+    .footer-tagline { font-size: 0.84rem; color: rgba(255,255,255,0.3); line-height: 1.8; margin-bottom: 1.5rem; }
+    .footer-socials { display: flex; gap: 0.8rem; }
+    .footer-social {
+      width: 36px; height: 36px; border: 1px solid rgba(201,168,76,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.35); transition: all 0.3s; text-decoration: none;
+    }
+    .footer-social:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.06); }
+    .footer-social svg { width: 15px; height: 15px; }
+
+    .footer-col-title { font-family: 'Cinzel', serif; font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col ul a { font-size: 0.84rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.3s; }
+    .footer-col ul a:hover { color: var(--gold-light); }
+
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.22); }
+
+    /* ── FLOATING WHATSAPP ── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 80;
+      width: 56px; height: 56px; background: var(--gold); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+      color: var(--green); text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(201,168,76,0.5); background: var(--gold-light); }
+    .wa-float svg { width: 24px; height: 24px; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .ceo-section, .principles-section, .story-section, .cta-section { padding: 5rem 1.5rem; }
+      .page-hero { padding: 130px 1.5rem 80px; }
+      .portrait-stack { max-width: 100%; }
+      .name-plate { right: 0; bottom: -1.5rem; }
+      .timeline { padding-left: 2rem; }
+    }
+  </style>
 </head>
+<body>
 
-<body class="bg-gray-50 text-gray-900 antialiased">
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">KK Events</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" class="nav-cta">Book Now</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
- <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-brand-green/20 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="text-3xl font-bold text-brand-green tracking-tight">
-                    KK Events
-                </a>
+  <!-- ── MOBILE DRAWER ── -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <span class="nav-logo">KK Events</span>
+        <button class="drawer-close" id="drawerClose">×</button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="drawer-foot">
+        <p>Kwara State, Nigeria</p>
+        <p style="margin-top:0.4rem;"><a href="tel:+2348102005493" style="color:var(--gold-light);text-decoration:none;">+234 810 200 5493</a></p>
+      </div>
+    </div>
+  </div>
 
-                <div class="hidden md:flex items-center space-x-10">
-                    <a href="index.html"
-                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">Home</a>
-                    <a href="about.html"
-                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">About</a>
-                    <a href="services.html"
-                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">Services</a>
-                    <a href="portfolio.html"
-                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">Portfolio</a>
-                    <a href="contact.html"
-                        class="text-lg font-medium text-gray-700 hover:text-brand-green transition">Contact</a>
-                </div>
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-inner">
+      <p class="page-hero-eyebrow">KK Events — Kwara State, Nigeria</p>
+      <h1 class="page-hero-title">
+        Meet <em>Kahbikushii</em>
+      </h1>
+      <p class="page-hero-sub">
+        CEO & Founder of KK Events — turning visions into unforgettable realities across Kwara State and beyond.
+      </p>
+      <div class="gold-rule"></div>
+    </div>
+  </section>
 
-                <!-- Hamburger Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-brand-green focus:outline-none">
-                    <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+  <!-- ── CEO PORTRAIT + BIO ── -->
+  <section class="ceo-section">
+    <div class="ceo-inner">
+
+      <!-- Portrait -->
+      <div data-reveal="left">
+        <div class="portrait-stack">
+          <div class="portrait-bg-block"></div>
+          <div class="portrait-gold-frame"></div>
+          <div class="portrait-img-wrap">
+            <img src="images/ceo-kahbikushii.jpg" alt="Kahbikushii – CEO of KK Events" loading="lazy">
+          </div>
+          <div class="name-plate">
+            <span class="name-plate-name">Kahbikushii</span>
+            <span class="name-plate-role">CEO & Founder · KK Events</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="ceo-bio" data-reveal="right">
+        <p class="section-label">The Founder</p>
+        <h2 class="ceo-title">
+          Passionate.<br>
+          <em>Strategic.</em><br>
+          Results-Driven.
+        </h2>
+        <div class="bio-divider"></div>
+        <p class="bio-para">
+          Hello, I'm <strong>Kahbikushii</strong>, the heart and mind behind KK Events. With deep roots in Kwara State, I've built a career transforming ideas into extraordinary experiences — whether it's a milestone celebration, a high-impact corporate gathering, or a community-changing fundraiser.
+        </p>
+        <p class="bio-para">
+          My approach is simple: every event, campaign, or training session should feel <strong>personal, purposeful, and perfectly executed</strong>. I combine creativity with strategy — from flawless event planning and powerful promotion to smart fundraising and meaningful content creation.
+        </p>
+        <p class="bio-para">
+          At KK Events, we don't just organise — we create memories, build connections, and help turn your goals into reality.
+        </p>
+
+        <div class="traits-row">
+          <span class="trait">Event Planning</span>
+          <span class="trait">Promotion Strategy</span>
+          <span class="trait">Fundraising</span>
+          <span class="trait">Content Creation</span>
+          <span class="trait">Training</span>
         </div>
 
-        <!-- Full-screen Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="fixed inset-0 bg-black/80 backdrop-blur-lg z-50 flex items-center justify-end transition-opacity duration-500 opacity-0 pointer-events-none md:hidden">
-            <!-- Menu Panel – Clearly ON TOP of overlay -->
-            <div id="mobile-panel"
-                class="relative h-full w-4/5 max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-700 ease-out flex flex-col z-60">
-
-                <!-- Header -->
-                <div
-                    class="flex items-center justify-between p-8 border-b border-brand-gold/20 bg-white/95 backdrop-blur-sm">
-                    <h3 class="text-3xl font-bold text-brand-green">KK Events</h3>
-                    <button id="mobile-close-btn"
-                        class="text-gray-700 hover:text-brand-gold focus:outline-none transition">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <!-- Menu Links – Centered vertically -->
-                <div
-                    class="flex-1 flex flex-col justify-center items-center space-y-12 px-8 text-2xl md:text-3xl font-medium bg-white/95">
-                    <a href="index.html"
-                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">Home</a>
-                    <a href="about.html"
-                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">About</a>
-                    <a href="services.html"
-                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">Services</a>
-                    <a href="portfolio.html"
-                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">Portfolio</a>
-                    <a href="contact.html"
-                        class="text-gray-800 hover:text-brand-gold transition duration-300 hover:underline underline-offset-8">Contact</a>
-                </div>
-
-                <!-- Bottom Contact Info -->
-                <div
-                    class="p-8 text-center text-gray-600 text-sm border-t border-brand-gold/10 bg-white/95 backdrop-blur-sm">
-                    <p>Kwara State, Nigeria</p>
-                    <p class="mt-2">
-                        <a href="tel:+2348102005493" class="hover:text-brand-gold">+234 810 200 5493</a>
-                    </p>
-                </div>
-            </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;">
+          <a href="contact.html" class="btn-primary"><span>Let's Work Together</span> <span>→</span></a>
+          <a href="services.html" class="btn-outline-dark">Our Services</a>
         </div>
-    </nav>
-        
-    <!-- Hero – Reduced font size, cooler & more professional -->
-    <section
-        class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-brand-green via-emerald-900 to-emerald-950 text-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8 text-brand-gold text-balance"
-                data-aos="fade-up">
-                Meet Kahbikushii
-            </h1>
-            <p class="text-xl sm:text-2xl md:text-3xl max-w-4xl mx-auto font-light leading-relaxed" data-aos="fade-up"
-                data-aos-delay="200">
-                CEO & Founder of KK Events – Turning visions into unforgettable realities across Kwara State and beyond.
-            </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUOTE PULL ── -->
+  <div class="quote-section" data-reveal>
+    <span class="quote-mark">"</span>
+    <p class="quote-text">
+      Every event should feel <em>personal, purposeful</em>, and perfectly executed.
+    </p>
+    <p class="quote-attr">— Kahbikushii, CEO · KK Events</p>
+  </div>
+
+  <!-- ── GUIDING PRINCIPLES ── -->
+  <section class="principles-section">
+    <div class="principles-inner">
+      <div class="principles-header" data-reveal>
+        <p class="section-label">Our Philosophy</p>
+        <h2 class="principles-title">
+          Guiding <em>Principles</em>
+        </h2>
+      </div>
+
+      <div class="principles-grid">
+        <!-- Excellence -->
+        <div class="principle-card" data-reveal>
+          <div class="principle-num">01</div>
+          <svg class="principle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/>
+          </svg>
+          <h3 class="principle-name">Excellence</h3>
+          <p class="principle-desc">Every detail matters — we deliver flawless execution from the first conversation to the final moment of your event.</p>
         </div>
-    </section>
 
-    <!-- CEO Portrait + Bio -->
-    <section class="py-20 md:py-28 bg-white">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <!-- Portrait -->
-                <div class="relative" data-aos="fade-right">
-                    <div class="overflow-hidden rounded-3xl shadow-2xl border-8 border-brand-gold/30">
-                        <img src="images/ceo-kahbikushii.jpg" alt="Kahbikushii – CEO of KK Events"
-                            class="w-full h-auto object-cover" loading="lazy">
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-gold/20 rounded-full blur-3xl -z-10">
-                    </div>
-                </div>
-
-                <!-- Bio -->
-                <div data-aos="fade-left">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-8 text-brand-green">
-                        Passionate. Strategic. Results-Driven.
-                    </h2>
-                    <div class="space-y-6 text-lg text-gray-700">
-                        <p>
-                            Hello, I'm <strong>Kahbikushii</strong>, the heart and mind behind KK Events. With deep
-                            roots in Kwara State, I've built a career transforming ideas into extraordinary experiences
-                            — whether it's a milestone celebration, a high-impact corporate gathering, or a
-                            community-changing fundraiser.
-                        </p>
-                        <p>
-                            My approach is simple: every event, campaign, or training session should feel personal,
-                            purposeful, and perfectly executed. I combine creativity with strategy — from flawless event
-                            planning and powerful promotion to smart fundraising and meaningful content creation.
-                        </p>
-                        <p>
-                            At KK Events, we don't just organize — we create memories, build connections, and help turn
-                            your goals into reality. If you're ready for events that leave a lasting impression, let's
-                            talk.
-                        </p>
-                    </div>
-
-                    <div class="mt-10">
-                        <a href="contact.html"
-                            class="inline-block bg-brand-gold text-brand-green px-10 py-5 rounded-full text-xl font-semibold hover:bg-brand-gold-dark transition shadow-xl transform hover:scale-105">
-                            Let's Work Together
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <!-- Authenticity -->
+        <div class="principle-card" data-reveal data-reveal-delay="100">
+          <div class="principle-num">02</div>
+          <svg class="principle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+          </svg>
+          <h3 class="principle-name">Authenticity</h3>
+          <p class="principle-desc">We create experiences that feel real, meaningful, and completely true to your vision — never generic, always personal.</p>
         </div>
-    </section>
 
-    <!-- Mission / Values -->
-    <section class="py-20 md:py-28 bg-brand-green/5">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-brand-green" data-aos="fade-up">
-                Our Guiding Principles
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-white p-10 rounded-3xl shadow-lg" data-aos="fade-up">
-                    <svg class="w-16 h-16 mx-auto mb-6 text-brand-gold" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7">
-                        </path>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-4 text-brand-green">Excellence</h3>
-                    <p class="text-lg text-gray-700">
-                        Every detail matters — we deliver flawless execution from start to finish.
-                    </p>
-                </div>
-
-                <div class="bg-white p-10 rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <svg class="w-16 h-16 mx-auto mb-6 text-brand-gold" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z">
-                        </path>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-4 text-brand-green">Authenticity</h3>
-                    <p class="text-lg text-gray-700">
-                        We create experiences that feel real, meaningful, and true to your vision.
-                    </p>
-                </div>
-
-                <div class="bg-white p-10 rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <svg class="w-16 h-16 mx-auto mb-6 text-brand-gold" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-4 text-brand-green">Results</h3>
-                    <p class="text-lg text-gray-700">
-                        From increased attendance to funds raised — we focus on measurable impact.
-                    </p>
-                </div>
-            </div>
+        <!-- Results -->
+        <div class="principle-card" data-reveal data-reveal-delay="200">
+          <div class="principle-num">03</div>
+          <svg class="principle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+          </svg>
+          <h3 class="principle-name">Results</h3>
+          <p class="principle-desc">From increased attendance to funds raised — we set clear goals and focus relentlessly on measurable, tangible impact.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="py-20 bg-white border-t border-brand-gold/20">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-8 text-brand-green">
-                Ready to Create Something Extraordinary?
-            </h2>
-            <p class="text-xl md:text-2xl mb-10 text-gray-700">
-                Let's turn your next idea into an unforgettable reality.
-            </p>
-            <a href="contact.html"
-                class="inline-block bg-brand-gold text-brand-green px-12 py-6 rounded-full text-xl font-semibold hover:bg-brand-gold-dark transition shadow-xl transform hover:scale-105">
-                Get in Touch Today
+  <!-- ── STORY TIMELINE ── -->
+  <section class="story-section">
+    <div class="story-inner">
+      <div class="story-header" data-reveal>
+        <p class="section-label">Our Journey</p>
+        <h2 class="story-title">
+          The KK Events <em>Story</em>
+        </h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item" data-reveal>
+          <p class="timeline-year">The Beginning</p>
+          <h3 class="timeline-heading">A Vision Takes Root</h3>
+          <p class="timeline-text">KK Events was born from a passion for bringing people together in meaningful ways — starting with intimate gatherings across Kwara State and growing rapidly through word of mouth.</p>
+        </div>
+        <div class="timeline-item" data-reveal data-reveal-delay="100">
+          <p class="timeline-year">Growth Phase</p>
+          <h3 class="timeline-heading">Expanding Our Reach</h3>
+          <p class="timeline-text">We expanded our service offering to include strategic promotion, fundraising consulting, and professional training — becoming a full-service event solutions company.</p>
+        </div>
+        <div class="timeline-item" data-reveal data-reveal-delay="200">
+          <p class="timeline-year">Community Impact</p>
+          <h3 class="timeline-heading">Building Connections</h3>
+          <p class="timeline-text">From political events and corporate gatherings to weddings, galas, and the landmark Ilorin Game Fiesta — KK Events became synonymous with excellence across the state.</p>
+        </div>
+        <div class="timeline-item" data-reveal data-reveal-delay="300">
+          <p class="timeline-year">Today & Beyond</p>
+          <h3 class="timeline-heading">Your Goal to Reality</h3>
+          <p class="timeline-text">With 200+ events delivered and a growing clientele across Nigeria, KK Events continues to set the standard for premium event management in the North Central region and nationwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section">
+    <div class="cta-inner" data-reveal>
+      <p class="section-label" style="justify-content:center;">Ready to Begin?</p>
+      <h2 class="cta-title">
+        Let's Create Something <em>Extraordinary</em>
+      </h2>
+      <p class="cta-sub">
+        Let's turn your next idea into an unforgettable reality. Reach out today for a free consultation.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+        <a href="contact.html" class="btn-primary"><span>Get in Touch Today</span> <span>→</span></a>
+        <a href="portfolio.html" class="btn-outline">View Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <span class="footer-brand-name">KK Events</span>
+          <p class="footer-tagline">Led by CEO Kahbikushii — turning visions into extraordinary realities across Kwara State and nationwide. Your Goal to Reality.</p>
+          <div class="footer-socials">
+            <a href="https://facebook.com/iam_kahbikushii" target="_blank" class="footer-social" aria-label="Facebook">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.992 22 12z"/></svg>
             </a>
+            <a href="https://instagram.com/iam_kahbikushii" target="_blank" class="footer-social" aria-label="Instagram">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.225.273 2.65.12 7.009.062 8.289.048 8.697.048 12c0 3.303.014 3.711.072 4.991.153 4.359 2.575 6.784 6.933 6.937 1.28.058 1.688.072 4.948.072 3.26 0 3.668-.014 4.948-.072 4.358-.153 6.78-2.578 6.933-6.937.058-1.28.072-1.688.072-4.991 0-3.303-.014-3.711-.072-4.991C23.727 2.65 21.205.225 16.847.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+            </a>
+            <a href="https://tiktok.com/@iam_kahbikushii" target="_blank" class="footer-social" aria-label="TikTok">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.56V.5h-3.45v13.67a2.89 2.89 0 11-2.89-2.89 2.79 2.79 0 011.93.78v-3.6a6.5 6.5 0 105.36 6.37V9.38a8.06 8.06 0 004.82 1.57v-3.5a4.83 4.83 0 01-3.77-1.76z"/></svg>
+            </a>
+            <a href="https://wa.me/2348102005493" target="_blank" class="footer-social" aria-label="WhatsApp">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 2.14.7 4.11 1.88 5.71L2 22l4.29-1.88C7.89 21.3 9.86 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm3.78 14.38c-.25.7-1.47 1.34-2.06 1.4-.59.06-1.34-.17-2.3-.64-.96-.47-1.76-1.02-2.55-1.76-.79-.74-1.48-1.6-2.06-2.6-.58-1-.87-2.15-.92-3.26-.05-1.11.28-2.2.96-3.07.68-.87 1.65-1.4 2.74-1.4.3 0 .6.03.89.09.66.14 1.25.48 1.73.98.48.5.8 1.12.93 1.79.13.67.05 1.35-.23 1.98-.28.63-.76 1.2-1.38 1.62-.62.42-1.34.65-2.07.65-.41 0-.81-.07-1.19-.21l-.38-.14c-.88-.33-1.6-.99-2.07-1.84-.47-.85-.68-1.84-.59-2.81.09-.97.44-1.89 1-2.62.56-.73 1.35-1.27 2.25-1.5.9-.23 1.84-.25 2.74-.06.9.19 1.74.66 2.4 1.35.66.69 1.1 1.56 1.25 2.5.15.94.06 1.9-.26 2.78z"/></svg>
+            </a>
+          </div>
         </div>
-    </section>
-
-     <!-- Footer (with FB + TikTok as added previously) -->
-    <footer class="bg-brand-green text-emerald-100 py-16 sm:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
-            <div>
-                <h4 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-brand-gold">Services</h4>
-                <ul class="space-y-3 sm:space-y-4 text-base sm:text-lg">
-                    <li><a href="services.html" class="hover:text-brand-gold transition">Events Planning</a></li>
-                    <li><a href="services.html" class="hover:text-brand-gold transition">Promotion Strategy</a></li>
-                    <li><a href="services.html" class="hover:text-brand-gold transition">Fundraising Consulting</a></li>
-                    <li><a href="services.html" class="hover:text-brand-gold transition">Content Creation</a></li>
-                    <li><a href="services.html" class="hover:text-brand-gold transition">Training Sessions</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-brand-gold">Resources</h4>
-                <ul class="space-y-3 sm:space-y-4 text-base sm:text-lg">
-                    <li><a href="#" class="hover:text-brand-gold transition">Event Inspiration</a></li>
-                    <li><a href="#" class="hover:text-brand-gold transition">Planning Guides</a></li>
-                    <li><a href="#" class="hover:text-brand-gold transition">Success Stories</a></li>
-                    <li><a href="#" class="hover:text-brand-gold transition">FAQs</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-brand-gold">About</h4>
-                <ul class="space-y-3 sm:space-y-4 text-base sm:text-lg">
-                    <li><a href="about.html" class="hover:text-brand-gold transition">Our Story</a></li>
-                    <li><a href="about.html" class="hover:text-brand-gold transition">Meet Kahbikushii</a></li>
-                    <li><a href="contact.html" class="hover:text-brand-gold transition">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-brand-gold">KK Events</h4>
-                <p class="text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                    Led by CEO Kahbikushii — turning visions into extraordinary realities across Kwara State and
-                    nationwide.
-                </p>
-                <address class="not-italic text-base sm:text-lg space-y-2 sm:space-y-3">
-                    <p>Kwara State, Nigeria</p>
-                    <p><a href="tel:+2348102005493" class="hover:text-brand-gold transition">+234 810 200 5493</a></p>
-                    <p><a href="mailto:adeoluwabunmii@gmail.com"
-                            class="hover:text-brand-gold transition break-all">adeoluwabunmii@gmail.com</a></p>
-                    <p class="mt-3 sm:mt-4">
-                        <a href="https://instagram.com/iam_kahbikushii" target="_blank"
-                            class="hover:text-brand-gold transition">@iam_kahbikushii</a>
-                    </p>
-                </address>
-            </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul>
+            <li><a href="services.html">Events Planning</a></li>
+            <li><a href="services.html">Promotion Strategy</a></li>
+            <li><a href="services.html">Fundraising</a></li>
+            <li><a href="services.html">Content Creation</a></li>
+            <li><a href="services.html">Training Sessions</a></li>
+          </ul>
         </div>
-
-        <div class="mt-12 sm:mt-16 border-t border-emerald-700/50 pt-8 sm:pt-12 text-center">
-            <div class="flex justify-center space-x-6 sm:space-x-8 mb-6 sm:mb-8 flex-wrap gap-4 sm:gap-6">
-                <!-- Facebook -->
-                <a href="https://facebook.com/iam_kahbikushii" target="_blank" aria-label="Facebook"
-                    class="text-emerald-200 hover:text-brand-gold transition transform hover:scale-110">
-                    <svg class="w-7 h-7 sm:w-9 sm:h-9" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.992 22 12z" />
-                    </svg>
-                </a>
-
-                <!-- Instagram -->
-                <a href="https://instagram.com/iam_kahbikushii" target="_blank" aria-label="Instagram"
-                    class="text-emerald-200 hover:text-brand-gold transition transform hover:scale-110">
-                    <svg class="w-7 h-7 sm:w-9 sm:h-9" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.225.273 2.65.12 7.009.062 8.289.048 8.697.048 12c0 3.303.014 3.711.072 4.991.153 4.359 2.575 6.784 6.933 6.937 1.28.058 1.688.072 4.948.072 3.26 0 3.668-.014 4.948-.072 4.358-.153 6.78-2.578 6.933-6.937.058-1.28.072-1.688.072-4.991 0-3.303-.014-3.711-.072-4.991C23.727 2.65 21.205.225 16.847.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
-                    </svg>
-                </a>
-
-                <!-- TikTok -->
-                <a href="https://tiktok.com/@iam_kahbikushii" target="_blank" aria-label="TikTok"
-                    class="text-emerald-200 hover:text-brand-gold transition transform hover:scale-110">
-                    <svg class="w-7 h-7 sm:w-9 sm:h-9" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M19.59 6.69a4.83 4.83 0 01-3.77-4.56V.5h-3.45v13.67a2.89 2.89 0 11-2.89-2.89 2.79 2.79 0 011.93.78v-3.6a6.5 6.5 0 105.36 6.37V9.38a8.06 8.06 0 004.82 1.57v-3.5a4.83 4.83 0 01-3.77-1.76z" />
-                    </svg>
-                </a>
-
-                <!-- WhatsApp -->
-                <a href="https://wa.me/2348102005493" target="_blank" aria-label="WhatsApp"
-                    class="text-emerald-200 hover:text-brand-gold transition transform hover:scale-110">
-                    <svg class="w-7 h-7 sm:w-9 sm:h-9" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12c0 2.14.7 4.11 1.88 5.71L2 22l4.29-1.88C7.89 21.3 9.86 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm3.78 14.38c-.25.7-1.47 1.34-2.06 1.4-.59.06-1.34-.17-2.3-.64-.96-.47-1.76-1.02-2.55-1.76-.79-.74-1.48-1.6-2.06-2.6-.58-1-.87-2.15-.92-3.26-.05-1.11.28-2.2.96-3.07.68-.87 1.65-1.4 2.74-1.4.3 0 .6.03.89.09.66.14 1.25.48 1.73.98.48.5.8 1.12.93 1.79.13.67.05 1.35-.23 1.98-.28.63-.76 1.2-1.38 1.62-.62.42-1.34.65-2.07.65-.41 0-.81-.07-1.19-.21l-.38-.14c-.88-.33-1.6-.99-2.07-1.84-.47-.85-.68-1.84-.59-2.81.09-.97.44-1.89 1-2.62.56-.73 1.35-1.27 2.25-1.5.9-.23 1.84-.25 2.74-.06.9.19 1.74.66 2.4 1.35.66.69 1.1 1.56 1.25 2.5.15.94.06 1.9-.26 2.78z" />
-                    </svg>
-                </a>
-            </div>
-
-            <p class="text-sm sm:text-base text-emerald-300">
-                © 2026 KK Events. All rights reserved. Your Goal to Reality.
-            </p>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-    </footer>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact</h4>
+          <ul>
+            <li><a href="tel:+2348102005493">+234 810 200 5493</a></li>
+            <li><a href="mailto:adeoluwabunmii@gmail.com">adeoluwabunmii@gmail.com</a></li>
+            <li><a href="https://instagram.com/iam_kahbikushii" target="_blank">@iam_kahbikushii</a></li>
+            <li style="color:rgba(255,255,255,0.3);font-size:0.84rem;padding-top:0.2rem;">Kwara State, Nigeria</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 KK Events. All rights reserved.</p>
+        <p class="footer-copy" style="font-family:'Cinzel',serif;letter-spacing:0.12em;font-size:0.63rem;color:rgba(201,168,76,0.35);">YOUR GOAL TO REALITY</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script>
-        AOS.init({ duration: 900, once: true, mirror: false });
-    </script>
-    <script src="js/main.js" defer></script>
+  <!-- ── FLOATING WHATSAPP ── -->
+  <a href="https://wa.me/2348102005493?text=Hello%20Kahbikushii%2C%20I'm%20interested%20in%20your%20services..."
+     class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 2.14.7 4.11 1.88 5.71L2 22l4.29-1.88C7.89 21.3 9.86 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm3.78 14.38c-.25.7-1.47 1.34-2.06 1.4-.59.06-1.34-.17-2.3-.64-.96-.47-1.76-1.02-2.55-1.76-.79-.74-1.48-1.6-2.06-2.6-.58-1-.87-2.15-.92-3.26-.05-1.11.28-2.2.96-3.07.68-.87 1.65-1.4 2.74-1.4.3 0 .6.03.89.09.66.14 1.25.48 1.73.98.48.5.8 1.12.93 1.79.13.67.05 1.35-.23 1.98-.28.63-.76 1.2-1.38 1.62-.62.42-1.34.65-2.07.65-.41 0-.81-.07-1.19-.21l-.38-.14c-.88-.33-1.6-.99-2.07-1.84-.47-.85-.68-1.84-.59-2.81.09-.97.44-1.89 1-2.62.56-.73 1.35-1.27 2.25-1.5.9-.23 1.84-.25 2.74-.06.9.19 1.74.66 2.4 1.35.66.69 1.1 1.56 1.25 2.5.15.94.06 1.9-.26 2.78z"/></svg>
+  </a>
+
+  <script>
+    // Mobile drawer
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('mobileDrawer');
+    const drawerClose = document.getElementById('drawerClose');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+
+    const openDrawer  = () => { drawer.classList.add('open');    document.body.style.overflow = 'hidden'; };
+    const closeDrawer = () => { drawer.classList.remove('open'); document.body.style.overflow = ''; };
+
+    hamburger.addEventListener('click', openDrawer);
+    drawerClose.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+  </script>
 </body>
-
 </html>
